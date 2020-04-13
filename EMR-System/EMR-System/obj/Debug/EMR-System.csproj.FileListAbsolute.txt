@@ -1,34 +1,25 @@
-D:\VS Repos\EMR-System\EMR-System\EMR-System\bin\Debug\EMR-System.exe.config
-D:\VS Repos\EMR-System\EMR-System\EMR-System\bin\Debug\EMR-System.exe
-D:\VS Repos\EMR-System\EMR-System\EMR-System\bin\Debug\EMR-System.pdb
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR-System.csprojAssemblyReference.cache
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.LoginPage.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.Properties.Resources.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.GenerateResource.cache
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CoreCompileInputs.cache
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR-System.exe
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR-System.pdb
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.BugReport.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Admin.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Doctor.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Clerk.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.ModifyUsersPage.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.SearchPatientPage.resources
-D:\VS Repos\EMR-System\EMR-System\EMR-System\obj\Debug\EMR_System.CreatePatientRecord.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\EMR-System.exe.config
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\EMR-System.exe
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\EMR-System.pdb
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csprojAssemblyReference.cache
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.BugReport.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.CreatePatientRecord.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.LoginPage.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Admin.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Clerk.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Doctor.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.ModifyUsersPage.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.Properties.Resources.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.SearchPatientPage.resources
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.GenerateResource.cache
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CoreCompileInputs.cache
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.exe
-D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.pdb
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.BugReport.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.CreatePatientRecord.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.LoginPage.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Admin.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Clerk.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Doctor.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.ModifyUsersPage.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.Properties.Resources.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.SearchPatientPage.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.GenerateResource.cache
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\EMR-System.exe.config
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\EMR-System.exe
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\EMR-System.pdb
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\Google.Protobuf.dll
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\MySql.Data.dll
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\Renci.SshNet.dll
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\Google.Protobuf.xml
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\MySql.Data.xml
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\bin\Debug\Renci.SshNet.xml
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR-System.csprojAssemblyReference.cache
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CopyComplete
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR-System.exe
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR-System.pdb

@@ -57,6 +57,8 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -80,6 +82,7 @@
             this.textSetLastName.Name = "textSetLastName";
             this.textSetLastName.Size = new System.Drawing.Size(209, 31);
             this.textSetLastName.TabIndex = 58;
+            this.textSetLastName.TextChanged += new System.EventHandler(this.textSetLastName_TextChanged);
             // 
             // labelLastName
             // 
@@ -99,6 +102,7 @@
             this.textSetPhoneNumber.Name = "textSetPhoneNumber";
             this.textSetPhoneNumber.Size = new System.Drawing.Size(209, 31);
             this.textSetPhoneNumber.TabIndex = 56;
+            this.textSetPhoneNumber.TextChanged += new System.EventHandler(this.textSetPhoneNumber_TextChanged);
             // 
             // textSetAddress
             // 
@@ -107,6 +111,7 @@
             this.textSetAddress.Name = "textSetAddress";
             this.textSetAddress.Size = new System.Drawing.Size(209, 31);
             this.textSetAddress.TabIndex = 55;
+            this.textSetAddress.TextChanged += new System.EventHandler(this.textSetAddress_TextChanged);
             // 
             // textSetSSN
             // 
@@ -115,6 +120,7 @@
             this.textSetSSN.Name = "textSetSSN";
             this.textSetSSN.Size = new System.Drawing.Size(209, 31);
             this.textSetSSN.TabIndex = 54;
+            this.textSetSSN.TextChanged += new System.EventHandler(this.textSetSSN_TextChanged);
             // 
             // textSetFirstName
             // 
@@ -123,6 +129,7 @@
             this.textSetFirstName.Name = "textSetFirstName";
             this.textSetFirstName.Size = new System.Drawing.Size(209, 31);
             this.textSetFirstName.TabIndex = 53;
+            this.textSetFirstName.TextChanged += new System.EventHandler(this.textSetFirstName_TextChanged);
             // 
             // labelPhoneNumber
             // 
@@ -171,16 +178,17 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(388, 299);
+            this.textBox1.Location = new System.Drawing.Point(388, 339);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(209, 31);
             this.textBox1.TabIndex = 68;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(179, 296);
+            this.label1.Location = new System.Drawing.Point(179, 336);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 34);
             this.label1.TabIndex = 67;
@@ -190,18 +198,20 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(388, 391);
+            this.textBox3.Location = new System.Drawing.Point(388, 431);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(209, 31);
             this.textBox3.TabIndex = 65;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(388, 345);
+            this.textBox4.Location = new System.Drawing.Point(388, 385);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(209, 31);
             this.textBox4.TabIndex = 64;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -210,12 +220,13 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(209, 31);
             this.textBox5.TabIndex = 63;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(179, 480);
+            this.label2.Location = new System.Drawing.Point(179, 520);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(203, 34);
             this.label2.TabIndex = 62;
@@ -226,7 +237,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(179, 388);
+            this.label3.Location = new System.Drawing.Point(179, 428);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 34);
             this.label3.TabIndex = 61;
@@ -237,7 +248,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(179, 342);
+            this.label4.Location = new System.Drawing.Point(179, 382);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(203, 34);
             this.label4.TabIndex = 60;
@@ -260,40 +271,43 @@
             this.radioMale.AutoSize = true;
             this.radioMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioMale.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioMale.Location = new System.Drawing.Point(388, 485);
+            this.radioMale.Location = new System.Drawing.Point(388, 525);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(77, 29);
             this.radioMale.TabIndex = 69;
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = true;
+            this.radioMale.CheckedChanged += new System.EventHandler(this.radioMale_CheckedChanged);
             // 
             // radioFemale
             // 
             this.radioFemale.AutoSize = true;
             this.radioFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioFemale.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioFemale.Location = new System.Drawing.Point(496, 485);
+            this.radioFemale.Location = new System.Drawing.Point(496, 525);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(101, 29);
             this.radioFemale.TabIndex = 70;
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
             this.radioFemale.UseVisualStyleBackColor = true;
+            this.radioFemale.CheckedChanged += new System.EventHandler(this.radioFemale_CheckedChanged);
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(388, 438);
+            this.textBox2.Location = new System.Drawing.Point(388, 478);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(209, 31);
             this.textBox2.TabIndex = 72;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(179, 435);
+            this.label6.Location = new System.Drawing.Point(179, 475);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(203, 34);
             this.label6.TabIndex = 71;
@@ -352,6 +366,28 @@
             this.button1.TabIndex = 77;
             this.button1.Text = "Create Patient Record";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Location = new System.Drawing.Point(126, 293);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(256, 34);
+            this.label9.TabIndex = 78;
+            this.label9.Text = "Insurance Number";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(388, 296);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(209, 31);
+            this.textBox6.TabIndex = 79;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // CreatePatientRecord
             // 
@@ -359,6 +395,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1111, 617);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label8);
@@ -429,5 +467,7 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
