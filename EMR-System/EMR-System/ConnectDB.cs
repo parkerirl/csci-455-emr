@@ -34,8 +34,8 @@ namespace EMR_System
 		{
 			server = "localhost";       //connect to localhost
 			database = "emrs_csci_455"; //schema to connect to in MySQL
-			uid = "username";				//MySQL Server Username !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S USERNAME BEFORE IT WILL WORK!!!
-			password = "password";      //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
+			uid = "root";				//MySQL Server Username !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S USERNAME BEFORE IT WILL WORK!!!
+			password = "Jigjag$0";      //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
 
 			string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
 				database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -149,12 +149,52 @@ namespace EMR_System
 		{
 		}
 
-		/*
+		
 		//select
-		public List <string> [] Select()
+		public List <string> [] Select(String ssn)
 		{
+			string query = $"SELECT first_name, last_name, birthday, ins_provider FROM patients WHERE patients.ssn = {ssn}";
+
+			//Create a list to store the result
+			List<string>[] list = new List<string>[4];
+			list[0] = new List<string>();	//first_name
+			list[1] = new List<string>();	//last_name
+			list[2] = new List<string>();	//birthday
+			list[3] = new List<string>();	//ins_provider
+
+			//Open connection
+			if (this.OpenConnection() == true)
+			{
+				//Create Command
+				MySqlCommand cmd = new MySqlCommand(query, connection);
+				//Create a data reader and Execute the command
+				MySqlDataReader dataReader = cmd.ExecuteReader();
+
+				//Read the data and store them in the list
+				while (dataReader.Read())
+				{
+					list[0].Add(dataReader["first_name"]   + "");
+					list[1].Add(dataReader["last_name"]    + "");
+					list[2].Add(dataReader["birthday"]     + "");
+					list[3].Add(dataReader["ins_provider"] + "");
+				}
+
+				//close Data Reader
+				dataReader.Close();
+
+				//close Connection
+				this.CloseConnection();
+
+				//return list to be displayed
+				return list;
+			}
+			else
+			{
+				return list;
+			}
 		}
 		
+		/*
 		//count
 		public int Count()
 		{

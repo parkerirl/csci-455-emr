@@ -200,6 +200,7 @@
             this.textPatientIdSearch.Name = "textPatientIdSearch";
             this.textPatientIdSearch.Size = new System.Drawing.Size(209, 31);
             this.textPatientIdSearch.TabIndex = 49;
+            this.textPatientIdSearch.TextChanged += new System.EventHandler(this.textPatientIdSearch_TextChanged);
             // 
             // labelPatientID
             // 
@@ -636,6 +637,7 @@
             this.buttonMoreInfo.TabIndex = 89;
             this.buttonMoreInfo.Text = "More Details";
             this.buttonMoreInfo.UseVisualStyleBackColor = false;
+            this.buttonMoreInfo.Click += new System.EventHandler(this.buttonMoreInfo_Click);
             // 
             // SearchPatientPage
             // 

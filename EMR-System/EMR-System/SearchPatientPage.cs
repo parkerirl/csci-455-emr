@@ -12,6 +12,8 @@ namespace EMR_System
 {
     public partial class SearchPatientPage : Form
     {
+        private String SSN;
+
         public SearchPatientPage()
         {
             InitializeComponent();
@@ -27,8 +29,21 @@ namespace EMR_System
             }
         }
 
+        //Search for patient info (for now only based on SSN) AND only works with (retrieves) ONE patient
         private void Button1_Click(object sender, EventArgs e)
         {
+            ConnectDB EMRDatabase = new ConnectDB();
+            List<string>[] Patients = EMRDatabase.Select(SSN);  //retrieve list
+
+            String Fname       = Patients[0][0].ToString();
+            String Lname       = Patients[1][0].ToString();
+            String Birthday    = Patients[2][0].ToString();
+            String InsProvider = Patients[3][0].ToString();
+
+            text1a.Text = $"{Lname}, {Fname}";
+            text1b.Text = $"{Birthday}";
+            text1c.Text = $"{InsProvider}";
+
             if (textPatientNameSearch.Text.Equals("Drew"))
             {
                 text1a.Text = "Pesall, Drew";
@@ -135,6 +150,17 @@ namespace EMR_System
         private void ButtonRow7_Click(object sender, EventArgs e)
         {
             setRowColors(7);
+        }
+
+        //Patient SSN to search
+        private void textPatientIdSearch_TextChanged(object sender, EventArgs e)
+        {
+            SSN = textPatientIdSearch.Text;
+        }
+
+        private void buttonMoreInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
