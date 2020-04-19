@@ -153,14 +153,22 @@ namespace EMR_System
 		//select
 		public List <string> [] Select(String ssn)
 		{
-			string query = $"SELECT first_name, last_name, birthday, ins_provider FROM patients WHERE patients.ssn = {ssn}";
+			string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.ssn = {ssn}";
 
 			//Create a list to store the result
-			List<string>[] list = new List<string>[4];
-			list[0] = new List<string>();	//first_name
-			list[1] = new List<string>();	//last_name
-			list[2] = new List<string>();	//birthday
-			list[3] = new List<string>();	//ins_provider
+			List<string>[] list = new List<string>[12];
+			list[0] = new List<string>();   //first_name
+			list[1] = new List<string>();   //last_name
+			list[2] = new List<string>();   //birthday
+			list[3] = new List<string>();   //ins_provider
+			list[4] = new List<string>();   //address
+			list[5] = new List<string>();   //email
+			list[6] = new List<string>();   //phone
+			list[7] = new List<string>();   //sex
+			list[8] = new List<string>();   //primary_physician
+			list[9] = new List<string>();   //blood_type
+			list[10] = new List<string>();   //ins_number
+			list[11] = new List<string>();   //ssn
 
 			//Open connection
 			if (this.OpenConnection() == true)
@@ -173,10 +181,18 @@ namespace EMR_System
 				//Read the data and store them in the list
 				while (dataReader.Read())
 				{
-					list[0].Add(dataReader["first_name"]   + "");
-					list[1].Add(dataReader["last_name"]    + "");
-					list[2].Add(dataReader["birthday"]     + "");
+					list[0].Add(dataReader["first_name"] + "");
+					list[1].Add(dataReader["last_name"] + "");
+					list[2].Add(dataReader["birthday"] + "");
 					list[3].Add(dataReader["ins_provider"] + "");
+					list[4].Add(dataReader["address"] + "");
+					list[5].Add(dataReader["email"] + "");
+					list[6].Add(dataReader["phone"] + "");
+					list[7].Add(dataReader["sex"] + "");
+					list[8].Add(dataReader["primary_physician"] + "");
+					list[9].Add(dataReader["blood_type"] + "");
+					list[10].Add(dataReader["ins_number"] + "");
+					list[11].Add(dataReader["ssn"] + "");
 				}
 
 				//close Data Reader
@@ -193,7 +209,65 @@ namespace EMR_System
 				return list;
 			}
 		}
-		
+
+		public List<string>[] SelectByName(String name)
+		{
+			string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.first_name = {name}";
+
+			//Create a list to store the result
+			List<string>[] list = new List<string>[12];
+			list[0]  = new List<string>();   //first_name
+			list[1]  = new List<string>();   //last_name
+			list[2]  = new List<string>();   //birthday
+			list[3]  = new List<string>();   //ins_provider
+			list[4]  = new List<string>();   //address
+			list[5]  = new List<string>();   //email
+			list[6]  = new List<string>();   //phone
+			list[7]  = new List<string>();   //sex
+			list[8]  = new List<string>();   //primary_physician
+			list[9]  = new List<string>();   //blood_type
+			list[10] = new List<string>();   //ins_number
+			list[11] = new List<string>();   //ssn
+			//Open connection
+			if (this.OpenConnection() == true)
+			{
+				//Create Command
+				MySqlCommand cmd = new MySqlCommand(query, connection);
+				//Create a data reader and Execute the command
+				MySqlDataReader dataReader = cmd.ExecuteReader();
+
+				//Read the data and store them in the list
+				while (dataReader.Read())
+				{
+					list[0].Add(dataReader["first_name"] + "");
+					list[1].Add(dataReader["last_name"] + "");
+					list[2].Add(dataReader["birthday"] + "");
+					list[3].Add(dataReader["ins_provider"] + "");
+					list[4].Add(dataReader["address"] + "");
+					list[5].Add(dataReader["email"] + "");
+					list[6].Add(dataReader["phone"] + "");
+					list[7].Add(dataReader["sex"] + "");
+					list[8].Add(dataReader["primary_physician"] + "");
+					list[9].Add(dataReader["blood_type"] + "");
+					list[10].Add(dataReader["ins_number"] + "");
+					list[11].Add(dataReader["ssn"] + "");
+				}
+
+				//close Data Reader
+				dataReader.Close();
+
+				//close Connection
+				this.CloseConnection();
+
+				//return list to be displayed
+				return list;
+			}
+			else
+			{
+				return list;
+			}
+		}
+
 		/*
 		//count
 		public int Count()

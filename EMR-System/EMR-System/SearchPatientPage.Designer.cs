@@ -476,6 +476,7 @@
             this.textPatientNameSearch.Name = "textPatientNameSearch";
             this.textPatientNameSearch.Size = new System.Drawing.Size(209, 31);
             this.textPatientNameSearch.TabIndex = 73;
+            this.textPatientNameSearch.TextChanged += new System.EventHandler(this.textPatientNameSearch_TextChanged);
             // 
             // labelResults
             // 

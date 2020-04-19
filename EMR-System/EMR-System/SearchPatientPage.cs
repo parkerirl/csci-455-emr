@@ -13,6 +13,7 @@ namespace EMR_System
     public partial class SearchPatientPage : Form
     {
         private String SSN;
+        private String FirstName;
 
         public SearchPatientPage()
         {
@@ -32,18 +33,71 @@ namespace EMR_System
         //Search for patient info (for now only based on SSN) AND only works with (retrieves) ONE patient
         private void Button1_Click(object sender, EventArgs e)
         {
-            ConnectDB EMRDatabase = new ConnectDB();
-            List<string>[] Patients = EMRDatabase.Select(SSN);  //retrieve list
+            //refresh list
+            text1a.Text = "";
+            text2a.Text = "";
+            text3a.Text = "";
+            text4a.Text = "";
+            text5a.Text = "";
+            text6a.Text = "";
+            text7a.Text = "";
+            text1b.Text = "";
+            text2b.Text = "";
+            text3b.Text = "";
+            text4b.Text = "";
+            text5b.Text = "";
+            text6b.Text = "";
+            text7b.Text = "";
+            text1c.Text = "";
+            text2c.Text = "";
+            text3c.Text = "";
+            text4c.Text = "";
+            text5c.Text = "";
+            text6c.Text = "";
+            text7c.Text = "";
+            textSetFirstName.Text   = "";
+            textSetLastName.Text    = "";
+            textSetSSN.Text         = "";
+            textSetAddress.Text     = "";
+            textSetPhoneNumber.Text = "";
 
-            String Fname       = Patients[0][0].ToString();
-            String Lname       = Patients[1][0].ToString();
-            String Birthday    = Patients[2][0].ToString();
-            String InsProvider = Patients[3][0].ToString();
+            ConnectDB EMRDatabase = new ConnectDB();
+            List<string>[] Patients;
+
+            if (!textPatientNameSearch.Text.Equals("")) //if searching by name
+            {
+                Patients = EMRDatabase.SelectByName(FirstName); //retrieve list by First Name
+            }
+
+            else
+            {
+                Patients = EMRDatabase.Select(SSN);  //retrieve list by SSN
+            }
+
+
+            String Fname            = Patients[0][0].ToString();
+            String Lname            = Patients[1][0].ToString();
+            String Birthday         = Patients[2][0].ToString();
+            String InsProvider      = Patients[3][0].ToString();
+            String Address          = Patients[4][0].ToString();
+            String Email            = Patients[5][0].ToString();
+            String Phone            = Patients[6][0].ToString();
+            String Sex              = Patients[7][0].ToString();
+            String PrimaryPhysician = Patients[8][0].ToString();
+            String BloodType        = Patients[9][0].ToString();
+            String InsNumber        = Patients[10][0].ToString();
+            String Ssn              = Patients[11][0].ToString();
 
             text1a.Text = $"{Lname}, {Fname}";
             text1b.Text = $"{Birthday}";
             text1c.Text = $"{InsProvider}";
+            textSetFirstName.Text   = $"{Fname}";
+            textSetLastName.Text    = $"{Lname}";
+            textSetSSN.Text         = $"{Ssn}";
+            textSetAddress.Text     = $"{Address}";
+            textSetPhoneNumber.Text = $"{Phone}";
 
+            /*debug
             if (textPatientNameSearch.Text.Equals("Drew"))
             {
                 text1a.Text = "Pesall, Drew";
@@ -54,7 +108,8 @@ namespace EMR_System
                 text2b.Text = "11/20/1994";
                 text2c.Text = "Anthem";
             }
-            
+            */
+
             buttonRow1.Enabled = (text1a.Text.Length > 1) ? true : false;
             buttonRow2.Enabled = (text2a.Text.Length > 1) ? true : false;
             buttonRow3.Enabled = (text3a.Text.Length > 1) ? true : false;
@@ -161,6 +216,11 @@ namespace EMR_System
         private void buttonMoreInfo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textPatientNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            FirstName = textPatientNameSearch.Text;
         }
     }
 }
