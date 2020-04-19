@@ -82,7 +82,7 @@ namespace EMR_System
 
             for (int i = 0; i < Ssn.Count; i++)
             {
-                dataGridView1.Rows.Add(Fname[i], Birthday[i].Split(' ')[0], InsNumber[i]);
+                dataGridView1.Rows.Add(Fname[i], Birthday[i], InsNumber[i]);
             }
 
             /*debug
