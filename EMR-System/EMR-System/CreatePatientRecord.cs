@@ -97,9 +97,9 @@ namespace EMR_System
         }
 
         //DoB
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void birthday_ValueChanged(object sender, EventArgs e)
         {
-            Birthday = textBox1.Text;
+            Birthday = dateTimePicker1.Value.ToString("yyyy-MM-dd");
         }
 
         //Primary Physician

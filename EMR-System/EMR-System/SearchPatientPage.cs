@@ -15,6 +15,19 @@ namespace EMR_System
         private String SSN;
         private String FirstName;
 
+        private List<string> Fname;
+        private List<string> Lname;
+        private List<string> Birthday;
+        private List<string> InsProvider;
+        private List<string> Address;
+        private List<string> Email;
+        private List<string> Phone;
+        private List<string> Sex;
+        private List<string> PrimaryPhysician;
+        private List<string> BloodType;
+        private List<string> InsNumber;
+        private List<string> Ssn;
+
         public SearchPatientPage()
         {
             InitializeComponent();
@@ -33,28 +46,6 @@ namespace EMR_System
         //Search for patient info (for now only based on SSN) AND only works with (retrieves) ONE patient
         private void Button1_Click(object sender, EventArgs e)
         {
-            //refresh list
-            text1a.Text = "";
-            text2a.Text = "";
-            text3a.Text = "";
-            text4a.Text = "";
-            text5a.Text = "";
-            text6a.Text = "";
-            text7a.Text = "";
-            text1b.Text = "";
-            text2b.Text = "";
-            text3b.Text = "";
-            text4b.Text = "";
-            text5b.Text = "";
-            text6b.Text = "";
-            text7b.Text = "";
-            text1c.Text = "";
-            text2c.Text = "";
-            text3c.Text = "";
-            text4c.Text = "";
-            text5c.Text = "";
-            text6c.Text = "";
-            text7c.Text = "";
             textSetFirstName.Text   = "";
             textSetLastName.Text    = "";
             textSetSSN.Text         = "";
@@ -63,6 +54,7 @@ namespace EMR_System
 
             ConnectDB EMRDatabase = new ConnectDB();
             List<string>[] Patients;
+            dataGridView1.Rows.Clear();
 
             if (!textPatientNameSearch.Text.Equals("")) //if searching by name
             {
@@ -75,27 +67,23 @@ namespace EMR_System
             }
 
 
-            String Fname            = Patients[0][0].ToString();
-            String Lname            = Patients[1][0].ToString();
-            String Birthday         = Patients[2][0].ToString();
-            String InsProvider      = Patients[3][0].ToString();
-            String Address          = Patients[4][0].ToString();
-            String Email            = Patients[5][0].ToString();
-            String Phone            = Patients[6][0].ToString();
-            String Sex              = Patients[7][0].ToString();
-            String PrimaryPhysician = Patients[8][0].ToString();
-            String BloodType        = Patients[9][0].ToString();
-            String InsNumber        = Patients[10][0].ToString();
-            String Ssn              = Patients[11][0].ToString();
+            Fname            = Patients[0];
+            Lname            = Patients[1];
+            Birthday         = Patients[2];
+            InsProvider      = Patients[3];
+            Address          = Patients[4];
+            Email            = Patients[5];
+            Phone            = Patients[6];
+            Sex              = Patients[7];
+            PrimaryPhysician = Patients[8];
+            BloodType        = Patients[9];
+            InsNumber        = Patients[10];
+            Ssn              = Patients[11];
 
-            text1a.Text = $"{Lname}, {Fname}";
-            text1b.Text = $"{Birthday}";
-            text1c.Text = $"{InsProvider}";
-            textSetFirstName.Text   = $"{Fname}";
-            textSetLastName.Text    = $"{Lname}";
-            textSetSSN.Text         = $"{Ssn}";
-            textSetAddress.Text     = $"{Address}";
-            textSetPhoneNumber.Text = $"{Phone}";
+            for (int i = 0; i < Ssn.Count; i++)
+            {
+                dataGridView1.Rows.Add(Fname[i], Birthday[i], InsNumber[i]);
+            }
 
             /*debug
             if (textPatientNameSearch.Text.Equals("Drew"))
@@ -109,102 +97,11 @@ namespace EMR_System
                 text2c.Text = "Anthem";
             }
             */
-
-            buttonRow1.Enabled = (text1a.Text.Length > 1) ? true : false;
-            buttonRow2.Enabled = (text2a.Text.Length > 1) ? true : false;
-            buttonRow3.Enabled = (text3a.Text.Length > 1) ? true : false;
-            buttonRow4.Enabled = (text4a.Text.Length > 1) ? true : false;
-            buttonRow5.Enabled = (text5a.Text.Length > 1) ? true : false;
-            buttonRow6.Enabled = (text6a.Text.Length > 1) ? true : false;
-            buttonRow7.Enabled = (text7a.Text.Length > 1) ? true : false;
-
-            if (text1a.Text.Length > 1)
-            {
-                buttonRow1.Enabled = true;
-            }
-        }
-
-        private void setRowColors(int rowNumber)
-        {
-            text1a.BackColor = SystemColors.Control; text1b.BackColor = SystemColors.Control; text1c.BackColor = SystemColors.Control;
-            text2a.BackColor = SystemColors.Control; text2b.BackColor = SystemColors.Control; text2c.BackColor = SystemColors.Control;
-            text3a.BackColor = SystemColors.Control; text3b.BackColor = SystemColors.Control; text3c.BackColor = SystemColors.Control;
-            text4a.BackColor = SystemColors.Control; text4b.BackColor = SystemColors.Control; text4c.BackColor = SystemColors.Control;
-            text5a.BackColor = SystemColors.Control; text5b.BackColor = SystemColors.Control; text5c.BackColor = SystemColors.Control;
-            text6a.BackColor = SystemColors.Control; text6b.BackColor = SystemColors.Control; text6c.BackColor = SystemColors.Control;
-            text7a.BackColor = SystemColors.Control; text7b.BackColor = SystemColors.Control; text7c.BackColor = SystemColors.Control;
-
-            switch (rowNumber)
-            {
-                case 1:
-                    text1a.BackColor = Color.Yellow; text1b.BackColor = Color.Yellow; text1c.BackColor = Color.Yellow;
-                    break;
-                case 2:
-                    text2a.BackColor = Color.Yellow; text2b.BackColor = Color.Yellow; text2c.BackColor = Color.Yellow;
-                    break;
-                case 3:
-                    text3a.BackColor = Color.Yellow; text3b.BackColor = Color.Yellow; text3c.BackColor = Color.Yellow;
-                    break;
-                case 4:
-                    text4a.BackColor = Color.Yellow; text4b.BackColor = Color.Yellow; text4c.BackColor = Color.Yellow;
-                    break;
-                case 5:
-                    text5a.BackColor = Color.Yellow; text5b.BackColor = Color.Yellow; text5c.BackColor = Color.Yellow;
-                    break;
-                case 6:
-                    text6a.BackColor = Color.Yellow; text6b.BackColor = Color.Yellow; text6c.BackColor = Color.Yellow;
-                    break;
-                case 7:
-                    text7a.BackColor = Color.Yellow; text7b.BackColor = Color.Yellow; text7c.BackColor = Color.Yellow;
-                    break;
-
-            }
         }
 
         private void SearchPatientPage_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void ButtonRow1_Click(object sender, EventArgs e)
-        {
-            setRowColors(1);
-        }
-
-        private void ButtonRow2_Click(object sender, EventArgs e)
-        {
-            setRowColors(2);
-
-            textSetFirstName.Text = "Andrew";
-            textSetLastName.Text = "Smith";
-            textSetSSN.Text = "*** - ** - 8456";
-            textSetAddress.Text = "476 N 32nd";
-            textSetPhoneNumber.Text = "612-546-0008";
-        }
-
-        private void ButtonRow3_Click(object sender, EventArgs e)
-        {
-            setRowColors(3);
-        }
-
-        private void ButtonRow4_Click(object sender, EventArgs e)
-        {
-            setRowColors(4);
-        }
-
-        private void ButtonRow5_Click(object sender, EventArgs e)
-        {
-            setRowColors(5);
-        }
-
-        private void ButtonRow6_Click(object sender, EventArgs e)
-        {
-            setRowColors(6);
-        }
-
-        private void ButtonRow7_Click(object sender, EventArgs e)
-        {
-            setRowColors(7);
         }
 
         //Patient SSN to search
@@ -221,6 +118,17 @@ namespace EMR_System
         private void textPatientNameSearch_TextChanged(object sender, EventArgs e)
         {
             FirstName = textPatientNameSearch.Text;
+        }
+        void grd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+            {
+                textSetFirstName.Text = Fname[e.RowIndex];
+                textSetLastName.Text = Lname[e.RowIndex];
+                textSetSSN.Text = Ssn[e.RowIndex];
+                textSetAddress.Text = Address[e.RowIndex];
+                textSetPhoneNumber.Text = Phone[e.RowIndex];
+            }
         }
     }
 }

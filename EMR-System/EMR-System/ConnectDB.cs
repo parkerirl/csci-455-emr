@@ -35,7 +35,7 @@ namespace EMR_System
 			server = "localhost";       //connect to localhost
 			database = "emrs_csci_455"; //schema to connect to in MySQL
 			uid = "root";				//MySQL Server Username !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S USERNAME BEFORE IT WILL WORK!!!
-			password = "Jigjag$0";      //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
+			password = "password";      //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
 
 			string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
 				database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -110,11 +110,19 @@ namespace EMR_System
 			//open connection
 			if (this.OpenConnection() == true)
 			{
+				
 				//create command and assign the query and connection from the constructor
 				MySqlCommand cmd = new MySqlCommand(query, connection);
 
-				//Execute command
-				cmd.ExecuteNonQuery();
+				try
+				{
+					//Execute command
+					cmd.ExecuteNonQuery();
+				}
+				catch (MySqlException ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 
 				//close connection
 				this.CloseConnection();
@@ -212,7 +220,7 @@ namespace EMR_System
 
 		public List<string>[] SelectByName(String name)
 		{
-			string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.first_name = {name}";
+			string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.first_name = '{name}'";
 
 			//Create a list to store the result
 			List<string>[] list = new List<string>[12];
@@ -235,6 +243,7 @@ namespace EMR_System
 				MySqlCommand cmd = new MySqlCommand(query, connection);
 				//Create a data reader and Execute the command
 				MySqlDataReader dataReader = cmd.ExecuteReader();
+
 
 				//Read the data and store them in the list
 				while (dataReader.Read())
