@@ -28,6 +28,9 @@ namespace EMR_System
         private List<string> InsNumber;
         private List<string> Ssn;
 
+        private List<string>[] Patients;
+        private String[] PatientsMoreInfo = new string[12];
+
         public SearchPatientPage()
         {
             InitializeComponent();
@@ -53,7 +56,7 @@ namespace EMR_System
             textSetPhoneNumber.Text = "";
 
             ConnectDB EMRDatabase = new ConnectDB();
-            List<string>[] Patients;
+           
             dataGridView1.Rows.Clear();
 
             if (!textPatientNameSearch.Text.Equals("")) //if searching by name
@@ -110,9 +113,14 @@ namespace EMR_System
             SSN = textPatientIdSearch.Text;
         }
 
+        //View expanded patient info on new page
         private void buttonMoreInfo_Click(object sender, EventArgs e)
         {
-
+            if(LoginPage.userType.Equals("admin") && PatientsMoreInfo != null)
+            {
+                PatientMoreInfo moreInfo = new PatientMoreInfo(PatientsMoreInfo);
+                moreInfo.Show();
+            }
         }
 
         private void textPatientNameSearch_TextChanged(object sender, EventArgs e)
@@ -123,12 +131,32 @@ namespace EMR_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 3)
             {
+                //populate boxes on page
                 textSetFirstName.Text = Fname[e.RowIndex];
                 textSetLastName.Text = Lname[e.RowIndex];
                 textSetSSN.Text = Ssn[e.RowIndex];
                 textSetAddress.Text = Address[e.RowIndex];
                 textSetPhoneNumber.Text = Phone[e.RowIndex];
+
+                //populate list to display more info
+                PatientsMoreInfo[0]  = Fname[e.RowIndex];
+                PatientsMoreInfo[1]  = Lname[e.RowIndex];
+                PatientsMoreInfo[2]  = Ssn[e.RowIndex];
+                PatientsMoreInfo[3]  = Address[e.RowIndex];
+                PatientsMoreInfo[4]  = Phone[e.RowIndex];
+                PatientsMoreInfo[5]  = Email[e.RowIndex];
+                PatientsMoreInfo[6]  = Sex[e.RowIndex];
+                PatientsMoreInfo[7]  = Birthday[e.RowIndex];
+                PatientsMoreInfo[8]  = BloodType[e.RowIndex];
+                PatientsMoreInfo[9]  = PrimaryPhysician[e.RowIndex];
+                PatientsMoreInfo[10] = InsProvider[e.RowIndex];
+                PatientsMoreInfo[11] = InsNumber[e.RowIndex];
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

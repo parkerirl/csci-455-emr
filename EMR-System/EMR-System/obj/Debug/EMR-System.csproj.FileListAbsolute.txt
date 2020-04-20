@@ -49,3 +49,4 @@ D:\AgBlox\Github\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.SearchP
 D:\AgBlox\Github\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.GenerateResource.cache
 D:\AgBlox\Github\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CoreCompileInputs.cache
 D:\AgBlox\Github\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CopyComplete
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.PatientMoreInfo.resources
