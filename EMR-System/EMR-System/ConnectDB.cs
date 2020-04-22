@@ -129,9 +129,25 @@ namespace EMR_System
     }
 
     //update
-    public void Update(String table)
+    public void UpdatePatient
+        (
+            String ssn, //varchar(11)
+            String first_name, //varchar(45)
+            String last_name, //varchar(45)
+            String address, //varchar(45)
+            String email, //varchar(45)
+            String phone, //varchar(45)
+            String sex, //varchar(1)
+            String birthday, //date
+            String blood_type, //varchar(45)
+            String primary_physician, //varchar(45)
+            String ins_provider, //varchar(45)
+            String ins_number //varchar(45)
+        )
     {
-      string query = $"UPDATE { table } SET name='Joe', age='22' WHERE name='John Smith'";
+      string query = $"UPDATE patients SET first_name='{first_name}', last_name='{last_name}', address='{address}', email='{email}', phone='{phone}'," +
+                $"sex='{sex}', birthday='{birthday}', blood_type='{blood_type}', primary_physician='{primary_physician}', ins_provider='{ins_provider}'," +
+                $"ins_number='{ins_number}' WHERE ssn='{ssn}';";
 
       //Open connection
       if (this.OpenConnection() == true)
@@ -154,10 +170,48 @@ namespace EMR_System
     //delete
     public void Delete() { }
 
+
+    //check to see if patient ssn already exists in DB
+    public Boolean PatientExists(String ssn)
+    {
+        string query = $"SELECT ssn FROM patients WHERE ssn = '{ssn}';";
+        string patientExists = null;
+        //Open connection
+        if (this.OpenConnection() == true)
+        {
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            //Read the ssn and store in string
+            while (dataReader.Read())
+            {
+                patientExists = dataReader["ssn"].ToString();
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            //close Connection
+            this.CloseConnection();
+
+            //true if patient already exists in DB
+            if (patientExists == null) return false;
+            else return true;
+            
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
     //select
     public List<string>[] Select(String ssn)
     {
-      string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.ssn = {ssn}";
+      string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.ssn = '{ssn}';";
 
       //Create a list to store the result
       List<string>[] list = new List<string>[12];
@@ -216,7 +270,7 @@ namespace EMR_System
 
     public List<string>[] SelectByName(String name)
     {
-      string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.first_name = '{name}'";
+      string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.first_name = '{name}';";
 
       //Create a list to store the result
       List<string>[] list = new List<string>[12];
@@ -337,7 +391,7 @@ namespace EMR_System
     {
       if (this.OpenConnection() == true)
       {
-        string query = $"INSERT INTO allergies VALUES ({ssn}, {allergy}, {date})";
+        string query = $"INSERT INTO allergies (patient_ssn, allergy, date_discovered) VALUES ('{ssn}', '{allergy}', '{date}')";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         try
         {
@@ -351,7 +405,27 @@ namespace EMR_System
       }
     }
 
-    public void RemoveAllergies(String ssn, String allergy, String date)
+    public void AddAllergiesExisting(String ssn, String allergy, String date)
+    {
+        if (this.OpenConnection() == true)
+        {
+            string query = $"UPDATE allergies SET allergy='{allergy}', date_discovered='{date}' WHERE patient_ssn='{ssn}';";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            this.CloseConnection();
+        }
+    }
+
+
+
+        public void RemoveAllergies(String ssn, String allergy, String date)
     {
       if (this.OpenConnection() == true)
       {
@@ -377,7 +451,7 @@ namespace EMR_System
 
       if (this.OpenConnection() == true)
       {
-        string query = $"SELECT allergy, date_discovered FROM allergies WHERE allergies.patient_ssn = {ssn}";
+        string query = $"SELECT allergy, date_discovered FROM allergies WHERE allergies.patient_ssn = '{ssn}'";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         MySqlDataReader dataReader = cmd.ExecuteReader();
 

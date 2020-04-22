@@ -87,19 +87,6 @@ namespace EMR_System
             {
                 dataGridView1.Rows.Add(Fname[i], Birthday[i], InsNumber[i]);
             }
-
-            /*debug
-            if (textPatientNameSearch.Text.Equals("Drew"))
-            {
-                text1a.Text = "Pesall, Drew";
-                text1b.Text = "03/29/1998";
-                text1c.Text = "Health Partners";
-
-                text2a.Text = "Smith, Andrew";
-                text2b.Text = "11/20/1994";
-                text2c.Text = "Anthem";
-            }
-            */
         }
 
         private void SearchPatientPage_Load(object sender, EventArgs e)

@@ -25,6 +25,8 @@ namespace EMR_System
         private String PrimaryPhysician;
         private String InsProvider;
         private String InsNum;
+        private String Allergy;
+        private String AllergyDate;
 
         public CreatePatientRecord()
         {
@@ -50,7 +52,22 @@ namespace EMR_System
         private void button1_Click(object sender, EventArgs e)
         {
             ConnectDB EMRDatabase = new ConnectDB();
-            EMRDatabase.InsertPatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
+            Boolean patientExists = EMRDatabase.PatientExists(SSN);
+            //if the SSN is already in the DB
+            if (patientExists == true)
+            {
+                Console.WriteLine("patient already exists!");
+                EMRDatabase.UpdatePatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
+                EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
+            }
+            else
+            {
+                Console.WriteLine("patient doesn't exist, adding to DB...");
+                EMRDatabase.InsertPatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
+                EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
+            }
+            
+
         }
 
         //Get values from text boxes------------------------------------
@@ -70,6 +87,10 @@ namespace EMR_System
         private void textSetSSN_TextChanged(object sender, EventArgs e)
         {
             SSN = textSetSSN.Text;
+            ConnectDB EMRDatabase = new ConnectDB();
+            Boolean patientExists = EMRDatabase.PatientExists(SSN);
+            if (patientExists == true) button1.Text = "Update Patient";
+            else button1.Text = "Create Patient";
         }
 
         //Address
@@ -137,5 +158,31 @@ namespace EMR_System
 
         }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            Allergy = richTextBox1.Text;
+        }
+
+        //allergy date of discovery
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            AllergyDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            Boolean patientExists = EMRDatabase.PatientExists(SSN);
+            //if the SSN is already in the DB
+            if (patientExists == true)
+            {
+                EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
+            }
+            else
+            {
+                EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
+            }
+            
+        }
     }
 }

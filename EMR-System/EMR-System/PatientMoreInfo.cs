@@ -12,6 +12,10 @@ namespace EMR_System
 {
     public partial class PatientMoreInfo : Form
     {
+        private List<string>[] AllergyList;
+        private List<string> AllergyAllergy;
+        private List<string> AllergyDoD;
+
         public PatientMoreInfo(String[] Patient)
         {
             InitializeComponent();
@@ -27,6 +31,16 @@ namespace EMR_System
             textSetPrimaryPhysician.Text    = $"{Patient[9]}";
             textSetInsuranceProvider.Text   = $"{Patient[10]}";
             textSetInsuranceNumber.Text     = $"{Patient[11]}";
+            ConnectDB EMRDatabase = new ConnectDB();
+            AllergyList = EMRDatabase.ViewAllAllergies(Patient[2]);
+            AllergyAllergy = AllergyList[0];
+            AllergyDoD = AllergyList[1];
+
+            for (int i = 0; i < AllergyAllergy.Count; i++)
+            {
+                dataGridView1.Rows.Add(AllergyAllergy[i], AllergyDoD[i]);
+            }
+
         }
 
         //go back to previous menu
@@ -41,6 +55,16 @@ namespace EMR_System
         }
 
         private void textSetFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }
