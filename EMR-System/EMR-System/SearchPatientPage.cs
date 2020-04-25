@@ -49,14 +49,14 @@ namespace EMR_System
         //Search for patient info (for now only based on SSN) AND only works with (retrieves) ONE patient
         private void Button1_Click(object sender, EventArgs e)
         {
-            textSetFirstName.Text   = "";
-            textSetLastName.Text    = "";
-            textSetSSN.Text         = "";
-            textSetAddress.Text     = "";
+            textSetFirstName.Text = "";
+            textSetLastName.Text = "";
+            textSetSSN.Text = "";
+            textSetAddress.Text = "";
             textSetPhoneNumber.Text = "";
 
             ConnectDB EMRDatabase = new ConnectDB();
-           
+
             dataGridView1.Rows.Clear();
 
             if (!textPatientNameSearch.Text.Equals("")) //if searching by name
@@ -70,18 +70,18 @@ namespace EMR_System
             }
 
 
-            Fname            = Patients[0];
-            Lname            = Patients[1];
-            Birthday         = Patients[2];
-            InsProvider      = Patients[3];
-            Address          = Patients[4];
-            Email            = Patients[5];
-            Phone            = Patients[6];
-            Sex              = Patients[7];
+            Fname = Patients[0];
+            Lname = Patients[1];
+            Birthday = Patients[2];
+            InsProvider = Patients[3];
+            Address = Patients[4];
+            Email = Patients[5];
+            Phone = Patients[6];
+            Sex = Patients[7];
             PrimaryPhysician = Patients[8];
-            BloodType        = Patients[9];
-            InsNumber        = Patients[10];
-            Ssn              = Patients[11];
+            BloodType = Patients[9];
+            InsNumber = Patients[10];
+            Ssn = Patients[11];
 
             for (int i = 0; i < Ssn.Count; i++)
             {
@@ -103,7 +103,7 @@ namespace EMR_System
         //View expanded patient info on new page
         private void buttonMoreInfo_Click(object sender, EventArgs e)
         {
-            if(LoginPage.userType.Equals("admin") && PatientsMoreInfo != null)
+            if (LoginPage.userType.Equals("admin") && PatientsMoreInfo != null)
             {
                 PatientMoreInfo moreInfo = new PatientMoreInfo(PatientsMoreInfo);
                 moreInfo.Show();
@@ -126,16 +126,16 @@ namespace EMR_System
                 textSetPhoneNumber.Text = Phone[e.RowIndex];
 
                 //populate list to display more info
-                PatientsMoreInfo[0]  = Fname[e.RowIndex];
-                PatientsMoreInfo[1]  = Lname[e.RowIndex];
-                PatientsMoreInfo[2]  = Ssn[e.RowIndex];
-                PatientsMoreInfo[3]  = Address[e.RowIndex];
-                PatientsMoreInfo[4]  = Phone[e.RowIndex];
-                PatientsMoreInfo[5]  = Email[e.RowIndex];
-                PatientsMoreInfo[6]  = Sex[e.RowIndex];
-                PatientsMoreInfo[7]  = Birthday[e.RowIndex];
-                PatientsMoreInfo[8]  = BloodType[e.RowIndex];
-                PatientsMoreInfo[9]  = PrimaryPhysician[e.RowIndex];
+                PatientsMoreInfo[0] = Fname[e.RowIndex];
+                PatientsMoreInfo[1] = Lname[e.RowIndex];
+                PatientsMoreInfo[2] = Ssn[e.RowIndex];
+                PatientsMoreInfo[3] = Address[e.RowIndex];
+                PatientsMoreInfo[4] = Phone[e.RowIndex];
+                PatientsMoreInfo[5] = Email[e.RowIndex];
+                PatientsMoreInfo[6] = Sex[e.RowIndex];
+                PatientsMoreInfo[7] = Birthday[e.RowIndex];
+                PatientsMoreInfo[8] = BloodType[e.RowIndex];
+                PatientsMoreInfo[9] = PrimaryPhysician[e.RowIndex];
                 PatientsMoreInfo[10] = InsProvider[e.RowIndex];
                 PatientsMoreInfo[11] = InsNumber[e.RowIndex];
             }
@@ -143,6 +143,14 @@ namespace EMR_System
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+
+            EMRDatabase.Delete(SSN); 
 
         }
     }

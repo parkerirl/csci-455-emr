@@ -168,7 +168,23 @@ namespace EMR_System
     }
 
     //delete
-    public void Delete() { }
+    public void Delete(String ssn) 
+    {
+        if (this.OpenConnection() == true)
+        {
+            string query = $"DELETE FROM patients WHERE ssn = '{ssn}'";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            this.CloseConnection();
+        }
+     }
 
 
     //check to see if patient ssn already exists in DB
