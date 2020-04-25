@@ -58,8 +58,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ins_provider = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -348,9 +346,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.f_name,
-            this.dob,
-            this.ins_provider,
-            this.select});
+            this.dob});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(571, 81);
             this.dataGridView1.Name = "dataGridView1";
@@ -361,25 +357,13 @@
             // 
             // f_name
             // 
-            this.f_name.HeaderText = "First Name";
+            this.f_name.HeaderText = "Allergy";
             this.f_name.Name = "f_name";
             // 
             // dob
             // 
-            this.dob.HeaderText = "DOB";
+            this.dob.HeaderText = "Date Found";
             this.dob.Name = "dob";
-            // 
-            // ins_provider
-            // 
-            this.ins_provider.HeaderText = "Insurance Provider";
-            this.ins_provider.Name = "ins_provider";
-            // 
-            // select
-            // 
-            this.select.HeaderText = "Select";
-            this.select.Name = "select";
-            this.select.Text = "Select";
-            this.select.UseColumnTextForButtonValue = true;
             // 
             // PatientMoreInfo
             // 
@@ -454,7 +438,5 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn dob;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ins_provider;
-        private System.Windows.Forms.DataGridViewButtonColumn select;
     }
 }
