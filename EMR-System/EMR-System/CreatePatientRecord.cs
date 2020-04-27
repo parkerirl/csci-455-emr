@@ -184,5 +184,18 @@ namespace EMR_System
             }
             
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            Boolean patientExists = EMRDatabase.PatientExists(SSN);
+            //if the SSN is already in the DB
+            if (patientExists == true)
+            {
+                MedicalHistory medHistory = new MedicalHistory(SSN);
+                medHistory.Show();
+            }
+            else { }
+        }
     }
 }

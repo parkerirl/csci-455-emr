@@ -103,7 +103,7 @@ namespace EMR_System
         //View expanded patient info on new page
         private void buttonMoreInfo_Click(object sender, EventArgs e)
         {
-            if (LoginPage.userType.Equals("admin") && PatientsMoreInfo != null)
+            if (PatientsMoreInfo != null)
             {
                 PatientMoreInfo moreInfo = new PatientMoreInfo(PatientsMoreInfo);
                 moreInfo.Show();

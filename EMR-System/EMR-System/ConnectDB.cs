@@ -550,7 +550,7 @@ namespace EMR_System
       int _age = Int32.Parse(age);
       if (this.OpenConnection() == true)
       {
-        string query = $"INSERT INTO family_medical_history VALUES ({ssn}, {relationship}, {disease}, {_age})";
+        string query = $"INSERT INTO family_medical_history VALUES ('{ssn}', '{relationship}', '{disease}', '{_age}');";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         try
         {
@@ -610,9 +610,16 @@ namespace EMR_System
 
     public void AddMedHistory(String ssn, String injury, bool hospitalized, bool surgery, String date)
     {
+            int hos;
+            int sur;
+            if (hospitalized == true) hos = 1;
+            else hos = 0;
+            if (surgery == true) sur = 1;
+            else sur = 0;
+
       if (this.OpenConnection() == true)
       {
-        string query = $"INSERT INTO medical_history VALUES ({ssn}, {injury}, {hospitalized}, {surgery}, {date})";
+        string query = $"INSERT INTO medical_history VALUES ('{ssn}', '{injury}', '{hos}', '{sur}', '{date}');";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         try
         {
