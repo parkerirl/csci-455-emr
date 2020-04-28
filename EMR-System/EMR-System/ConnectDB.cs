@@ -592,7 +592,7 @@ namespace EMR_System
 
       if (this.OpenConnection() == true)
       {
-        string query = $"SELECT relationship, disease, age FROM family_medical_history WHERE family_medical_history.patient_ssn = {ssn}";
+        string query = $"SELECT relationship, disease, age FROM family_medical_history WHERE family_medical_history.patient_ssn = '{ssn}';";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         MySqlDataReader dataReader = cmd.ExecuteReader();
 
@@ -661,7 +661,7 @@ namespace EMR_System
 
       if (this.OpenConnection() == true)
       {
-        string query = $"SELECT injury, hospitalized, surgery, date FROM medical_history WHERE medical_history.patient_ssn = {ssn}";
+        string query = $"SELECT injury, hospitalized, surgery_required, date FROM medical_history WHERE medical_history.patient_ssn = '{ssn}';";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         MySqlDataReader dataReader = cmd.ExecuteReader();
 
@@ -669,8 +669,8 @@ namespace EMR_System
         while (dataReader.Read())
         {
           list[0].Add(dataReader["injury"].ToString());
-          list[1].Add((bool)dataReader["hospitalized"] ? "True" : null);
-          list[2].Add((bool)dataReader["surgery"] ? "True" : null);
+          list[1].Add(dataReader["hospitalized"].ToString());
+          list[2].Add(dataReader["surgery_required"].ToString());
           list[3].Add(dataReader["date"].ToString().Split(' ')[0]);
         }
         this.CloseConnection();
