@@ -10,36 +10,23 @@ using System.Windows.Forms;
 
 namespace EMR_System
 {
-    public partial class MainPage_Doctor : Form
+    public partial class PatientPage : Form
     {
-        public MainPage_Doctor()
+        public PatientPage()
         {
             InitializeComponent();
         }
 
-        private void MainPage_Doctor_Load(object sender, EventArgs e)
+        private void PatientPage_Load(object sender, EventArgs e)
         {
             labelCurrentUserName.Text = LoginPage.userName;
             labelStatusType.Text = LoginPage.userType;
-        }
-
-        private void ButtonReportBug_Click(object sender, EventArgs e)
-        {
-            BugReport report = new BugReport();
-            report.Show();
         }
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
             LoginPage login = new LoginPage();
             login.Show();
-            this.Close();
-        }
-
-        private void ButtonPatientSearch_Click(object sender, EventArgs e)
-        {
-            SearchPatientPage search = new SearchPatientPage();
-            search.Show();
             this.Close();
         }
     }

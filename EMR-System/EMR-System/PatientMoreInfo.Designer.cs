@@ -58,25 +58,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectAllergy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hospitalized = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surgery = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectPMH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Relationship = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectFMH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -358,7 +358,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -377,6 +377,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(528, 142);
             this.dataGridView1.TabIndex = 117;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // f_name
+            // 
+            this.f_name.HeaderText = "Allergy";
+            this.f_name.Name = "f_name";
+            // 
+            // dob
+            // 
+            this.dob.HeaderText = "Date Found";
+            this.dob.Name = "dob";
+            // 
+            // SelectAllergy
+            // 
+            this.SelectAllergy.HeaderText = "Select";
+            this.SelectAllergy.Name = "SelectAllergy";
             // 
             // label10
             // 
@@ -407,7 +422,7 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -429,6 +444,35 @@
             this.dataGridView2.TabIndex = 120;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // Item
+            // 
+            this.Item.HeaderText = "Item";
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            // 
+            // Hospitalized
+            // 
+            this.Hospitalized.HeaderText = "Hospitalized";
+            this.Hospitalized.Name = "Hospitalized";
+            this.Hospitalized.ReadOnly = true;
+            // 
+            // Surgery
+            // 
+            this.Surgery.HeaderText = "Surgery";
+            this.Surgery.Name = "Surgery";
+            this.Surgery.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // SelectPMH
+            // 
+            this.SelectPMH.HeaderText = "Select";
+            this.SelectPMH.Name = "SelectPMH";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -436,7 +480,7 @@
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -456,6 +500,29 @@
             this.dataGridView3.Size = new System.Drawing.Size(528, 142);
             this.dataGridView3.TabIndex = 121;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // Relationship
+            // 
+            this.Relationship.HeaderText = "Relationship";
+            this.Relationship.Name = "Relationship";
+            this.Relationship.ReadOnly = true;
+            // 
+            // Condition
+            // 
+            this.Condition.HeaderText = "Condition";
+            this.Condition.Name = "Condition";
+            this.Condition.ReadOnly = true;
+            // 
+            // Age
+            // 
+            this.Age.HeaderText = "Age";
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
+            // 
+            // SelectFMH
+            // 
+            this.SelectFMH.HeaderText = "Select";
+            this.SelectFMH.Name = "SelectFMH";
             // 
             // button2
             // 
@@ -498,73 +565,6 @@
             this.button1.Text = "Delete Allergy";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // f_name
-            // 
-            this.f_name.HeaderText = "Allergy";
-            this.f_name.Name = "f_name";
-            // 
-            // dob
-            // 
-            this.dob.HeaderText = "Date Found";
-            this.dob.Name = "dob";
-            // 
-            // SelectAllergy
-            // 
-            this.SelectAllergy.HeaderText = "Select";
-            this.SelectAllergy.Name = "SelectAllergy";
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // Hospitalized
-            // 
-            this.Hospitalized.HeaderText = "Hospitalized";
-            this.Hospitalized.Name = "Hospitalized";
-            this.Hospitalized.ReadOnly = true;
-            // 
-            // Surgery
-            // 
-            this.Surgery.HeaderText = "Surgery";
-            this.Surgery.Name = "Surgery";
-            this.Surgery.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // SelectPMH
-            // 
-            this.SelectPMH.HeaderText = "Select";
-            this.SelectPMH.Name = "SelectPMH";
-            // 
-            // Relationship
-            // 
-            this.Relationship.HeaderText = "Relationship";
-            this.Relationship.Name = "Relationship";
-            this.Relationship.ReadOnly = true;
-            // 
-            // Condition
-            // 
-            this.Condition.HeaderText = "Condition";
-            this.Condition.Name = "Condition";
-            this.Condition.ReadOnly = true;
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
-            // 
-            // SelectFMH
-            // 
-            this.SelectFMH.HeaderText = "Select";
-            this.SelectFMH.Name = "SelectFMH";
             // 
             // PatientMoreInfo
             // 

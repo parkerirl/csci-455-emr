@@ -51,21 +51,10 @@ namespace EMR_System
         //Submit filled-out form to change into MySQL query
         private void button1_Click(object sender, EventArgs e)
         {
-            ConnectDB EMRDatabase = new ConnectDB();
-            Boolean patientExists = EMRDatabase.PatientExists(SSN);
-            //if the SSN is already in the DB
-            if (patientExists == true)
-            {
-                Console.WriteLine("patient already exists!");
-                EMRDatabase.UpdatePatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
-                EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
-            }
-            else
-            {
-                Console.WriteLine("patient doesn't exist, adding to DB...");
-                EMRDatabase.InsertPatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
-                EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
-            }
+            confirmationBox.Visible = true; confirmationBox.BringToFront();
+            labelConfirm.Visible = true; labelConfirm.BringToFront();
+            buttonCancel.Visible = true; buttonCancel.BringToFront();
+            buttonSubmit.Visible = true; buttonSubmit.BringToFront();
             
 
         }
@@ -197,6 +186,37 @@ namespace EMR_System
                 medHistory.Show();
             }
             else { }
+        }
+
+        private void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            Boolean patientExists = EMRDatabase.PatientExists(SSN);
+            //if the SSN is already in the DB
+            if (patientExists == true)
+            {
+                Console.WriteLine("patient already exists!");
+                EMRDatabase.UpdatePatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
+                EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
+            }
+            else
+            {
+                Console.WriteLine("patient doesn't exist, adding to DB...");
+                EMRDatabase.InsertPatient(SSN, Fname, Lname, Address, Email, Phone, Sex, Birthday, BloodType, PrimaryPhysician, InsProvider, InsNum);
+                EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
+            }
+            confirmationBox.Visible = false;
+            labelConfirm.Visible = false;
+            buttonCancel.Visible = false;
+            buttonSubmit.Visible = false;
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            confirmationBox.Visible = false;
+            labelConfirm.Visible = false;
+            buttonCancel.Visible = false;
+            buttonSubmit.Visible = false;
         }
     }
 }

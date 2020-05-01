@@ -62,6 +62,11 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.confirmationBox = new System.Windows.Forms.PictureBox();
+            this.labelConfirm = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationBox)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -428,6 +433,55 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.BackColor = System.Drawing.Color.Red;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonCancel.Location = new System.Drawing.Point(201, 386);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(278, 102);
+            this.buttonCancel.TabIndex = 97;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.Color.Green;
+            this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubmit.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonSubmit.Location = new System.Drawing.Point(597, 386);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(278, 102);
+            this.buttonSubmit.TabIndex = 96;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Visible = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
+            // 
+            // confirmationBox
+            // 
+            this.confirmationBox.Location = new System.Drawing.Point(12, 8);
+            this.confirmationBox.Name = "confirmationBox";
+            this.confirmationBox.Size = new System.Drawing.Size(1087, 600);
+            this.confirmationBox.TabIndex = 95;
+            this.confirmationBox.TabStop = false;
+            this.confirmationBox.Visible = false;
+            // 
+            // labelConfirm
+            // 
+            this.labelConfirm.AutoSize = true;
+            this.labelConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirm.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelConfirm.Location = new System.Drawing.Point(239, 275);
+            this.labelConfirm.Name = "labelConfirm";
+            this.labelConfirm.Size = new System.Drawing.Size(602, 55);
+            this.labelConfirm.TabIndex = 98;
+            this.labelConfirm.Text = "Please confirm your action:";
+            this.labelConfirm.Visible = false;
+            // 
             // CreatePatientRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,11 +522,16 @@
             this.Controls.Add(this.labelSSN);
             this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.confirmationBox);
+            this.Controls.Add(this.buttonSubmit);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.labelConfirm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CreatePatientRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Electronic Medical Record System";
             this.Load += new System.EventHandler(this.CreatePatientRecord_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,5 +573,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.PictureBox confirmationBox;
+        private System.Windows.Forms.Label labelConfirm;
     }
 }

@@ -51,3 +51,32 @@ D:\AgBlox\Github\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.
 D:\AgBlox\Github\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CopyComplete
 C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.PatientMoreInfo.resources
 C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.MedicalHistory.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\EMR-System.exe.config
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\EMR-System.exe
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\EMR-System.pdb
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\BouncyCastle.Crypto.dll
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\Google.Protobuf.dll
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\MySql.Data.dll
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\Renci.SshNet.dll
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\Ubiety.Dns.Core.dll
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\Google.Protobuf.xml
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\MySql.Data.xml
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\bin\Debug\Renci.SshNet.xml
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csprojAssemblyReference.cache
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.BugReport.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.CreatePatientRecord.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MedicalHistory.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.LoginPage.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Admin.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Clerk.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.MainPage_Doctor.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.ModifyUsersPage.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.PatientMoreInfo.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.Properties.Resources.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.SearchPatientPage.resources
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.GenerateResource.cache
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CoreCompileInputs.cache
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CopyComplete
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.exe
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.pdb
+D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.PatientPage.resources

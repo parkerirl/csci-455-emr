@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonBack = new System.Windows.Forms.Button();
             this.textSetLastName = new System.Windows.Forms.TextBox();
             this.labelLastName = new System.Windows.Forms.Label();
@@ -53,7 +53,12 @@
             this.ins_provider = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.confirmationBox = new System.Windows.Forms.PictureBox();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.labelConfirm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationBox)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -116,6 +121,7 @@
             this.textSetSSN.Name = "textSetSSN";
             this.textSetSSN.Size = new System.Drawing.Size(209, 31);
             this.textSetSSN.TabIndex = 44;
+            this.textSetSSN.TextChanged += new System.EventHandler(this.TextSetSSN_TextChanged);
             // 
             // textSetFirstName
             // 
@@ -187,7 +193,7 @@
             this.labelPatientID.Name = "labelPatientID";
             this.labelPatientID.Size = new System.Drawing.Size(151, 34);
             this.labelPatientID.TabIndex = 50;
-            this.labelPatientID.Text = "Patient ID:";
+            this.labelPatientID.Text = "Patient SSN:";
             this.labelPatientID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonSearchPatient
@@ -254,14 +260,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.f_name,
@@ -314,6 +320,55 @@
             this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // confirmationBox
+            // 
+            this.confirmationBox.Location = new System.Drawing.Point(12, 5);
+            this.confirmationBox.Name = "confirmationBox";
+            this.confirmationBox.Size = new System.Drawing.Size(1087, 600);
+            this.confirmationBox.TabIndex = 92;
+            this.confirmationBox.TabStop = false;
+            this.confirmationBox.Visible = false;
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.Color.Green;
+            this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubmit.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonSubmit.Location = new System.Drawing.Point(597, 383);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(278, 102);
+            this.buttonSubmit.TabIndex = 93;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Visible = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.BackColor = System.Drawing.Color.Red;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonCancel.Location = new System.Drawing.Point(201, 383);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(278, 102);
+            this.buttonCancel.TabIndex = 94;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // labelConfirm
+            // 
+            this.labelConfirm.AutoSize = true;
+            this.labelConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirm.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelConfirm.Location = new System.Drawing.Point(256, 298);
+            this.labelConfirm.Name = "labelConfirm";
+            this.labelConfirm.Size = new System.Drawing.Size(602, 55);
+            this.labelConfirm.TabIndex = 95;
+            this.labelConfirm.Text = "Please confirm your action:";
+            this.labelConfirm.Visible = false;
+            // 
             // SearchPatientPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,12 +395,17 @@
             this.Controls.Add(this.labelSSN);
             this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.labelConfirm);
+            this.Controls.Add(this.confirmationBox);
+            this.Controls.Add(this.buttonSubmit);
+            this.Controls.Add(this.buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SearchPatientPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Electronic Medical Record System";
             this.Load += new System.EventHandler(this.SearchPatientPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,5 +437,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ins_provider;
         private System.Windows.Forms.DataGridViewButtonColumn select;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.PictureBox confirmationBox;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Label labelConfirm;
     }
 }

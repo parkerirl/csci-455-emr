@@ -17,6 +17,7 @@ namespace EMR_System
         private MainPage_Admin mainPageAdmin;
         private MainPage_Doctor mainPageDoctor;
         private MainPage_Clerk mainPageClerk;
+        private PatientPage patientPage;
 
         public LoginPage()
         {
@@ -69,13 +70,21 @@ namespace EMR_System
 
             if (id.Equals("clerk") || id.Equals("62504"))
             {
-                if (password.Equals("clerk"))
+                if (password.Equals("patient"))
                 {
                     this.Hide();
                     mainPageClerk = new MainPage_Clerk();
                     mainPageClerk.Show();
                     success = true;
                 }
+            }
+
+            if (id.Equals("patient") || id.Equals("62505"))
+            {
+                this.Hide();
+                patientPage = new PatientPage();
+                patientPage.Show();
+                success = true;
             }
 
             if (!success) {

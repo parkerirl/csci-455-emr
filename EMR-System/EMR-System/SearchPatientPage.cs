@@ -13,7 +13,10 @@ namespace EMR_System
     public partial class SearchPatientPage : Form
     {
         private String SSN;
+        private String selectedSSN;
         private String FirstName;
+
+        public static Boolean confirmation = false;
 
         private List<string> Fname;
         private List<string> Lname;
@@ -41,6 +44,18 @@ namespace EMR_System
             if (LoginPage.userType.Equals("admin"))
             {
                 MainPage_Admin main = new MainPage_Admin();
+                main.Show();
+                this.Close();
+            }
+            if (LoginPage.userType.Equals("doctor"))
+            {
+                MainPage_Doctor main = new MainPage_Doctor();
+                main.Show();
+                this.Close();
+            }
+            if (LoginPage.userType.Equals("clerk"))
+            {
+                MainPage_Clerk main = new MainPage_Clerk();
                 main.Show();
                 this.Close();
             }
@@ -148,15 +163,40 @@ namespace EMR_System
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            ConnectDB EMRDatabase = new ConnectDB();
-
-            EMRDatabase.Delete(SSN); 
+            confirmationBox.Visible = true; confirmationBox.BringToFront();
+            labelConfirm.Visible = true; labelConfirm.BringToFront();
+            buttonCancel.Visible = true; buttonCancel.BringToFront();
+            buttonSubmit.Visible = true; buttonSubmit.BringToFront();
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void TextSetSSN_TextChanged(object sender, EventArgs e)
+        {
+            selectedSSN = textSetSSN.Text;
+        }
+
+        private void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            EMRDatabase.Delete(selectedSSN);
+
+            confirmationBox.Visible = false;
+            labelConfirm.Visible = false;
+            buttonCancel.Visible = false;
+            buttonSubmit.Visible = false;
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            confirmationBox.Visible = false;
+            labelConfirm.Visible = false;
+            buttonCancel.Visible = false;
+            buttonSubmit.Visible = false;
         }
     }
 }
