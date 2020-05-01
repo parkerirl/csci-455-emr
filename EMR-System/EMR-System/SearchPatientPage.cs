@@ -153,5 +153,10 @@ namespace EMR_System
             EMRDatabase.Delete(SSN); 
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

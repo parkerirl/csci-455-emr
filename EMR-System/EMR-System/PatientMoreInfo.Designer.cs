@@ -58,19 +58,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Surgery = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hospitalized = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectAllergy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hospitalized = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surgery = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectPMH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Relationship = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectFMH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -361,7 +367,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.f_name,
-            this.dob});
+            this.dob,
+            this.SelectAllergy});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(571, 81);
             this.dataGridView1.Name = "dataGridView1";
@@ -369,16 +376,7 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(528, 142);
             this.dataGridView1.TabIndex = 117;
-            // 
-            // f_name
-            // 
-            this.f_name.HeaderText = "Allergy";
-            this.f_name.Name = "f_name";
-            // 
-            // dob
-            // 
-            this.dob.HeaderText = "Date Found";
-            this.dob.Name = "dob";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label10
             // 
@@ -420,7 +418,8 @@
             this.Item,
             this.Hospitalized,
             this.Surgery,
-            this.Date});
+            this.Date,
+            this.SelectPMH});
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(571, 229);
             this.dataGridView2.Name = "dataGridView2";
@@ -447,7 +446,8 @@
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Relationship,
             this.Condition,
-            this.Age});
+            this.Age,
+            this.SelectFMH});
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(571, 377);
             this.dataGridView3.Name = "dataGridView3";
@@ -457,17 +457,68 @@
             this.dataGridView3.TabIndex = 121;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
-            // Date
+            // button2
             // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button2.CausesValidation = false;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(741, 525);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(176, 64);
+            this.button2.TabIndex = 123;
+            this.button2.Text = "Delete Patient History";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Surgery
+            // button3
             // 
-            this.Surgery.HeaderText = "Surgery";
-            this.Surgery.Name = "Surgery";
-            this.Surgery.ReadOnly = true;
+            this.button3.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button3.CausesValidation = false;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(923, 525);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(176, 64);
+            this.button3.TabIndex = 124;
+            this.button3.Text = "Delete Family History";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button1.CausesValidation = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(559, 525);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 64);
+            this.button1.TabIndex = 125;
+            this.button1.Text = "Delete Allergy";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // f_name
+            // 
+            this.f_name.HeaderText = "Allergy";
+            this.f_name.Name = "f_name";
+            // 
+            // dob
+            // 
+            this.dob.HeaderText = "Date Found";
+            this.dob.Name = "dob";
+            // 
+            // SelectAllergy
+            // 
+            this.SelectAllergy.HeaderText = "Select";
+            this.SelectAllergy.Name = "SelectAllergy";
+            // 
+            // Item
+            // 
+            this.Item.HeaderText = "Item";
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
             // 
             // Hospitalized
             // 
@@ -475,11 +526,22 @@
             this.Hospitalized.Name = "Hospitalized";
             this.Hospitalized.ReadOnly = true;
             // 
-            // Item
+            // Surgery
             // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
+            this.Surgery.HeaderText = "Surgery";
+            this.Surgery.Name = "Surgery";
+            this.Surgery.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // SelectPMH
+            // 
+            this.SelectPMH.HeaderText = "Select";
+            this.SelectPMH.Name = "SelectPMH";
             // 
             // Relationship
             // 
@@ -499,12 +561,20 @@
             this.Age.Name = "Age";
             this.Age.ReadOnly = true;
             // 
+            // SelectFMH
+            // 
+            this.SelectFMH.HeaderText = "Select";
+            this.SelectFMH.Name = "SelectFMH";
+            // 
             // PatientMoreInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1111, 617);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label11);
@@ -576,18 +646,24 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectAllergy;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hospitalized;
         private System.Windows.Forms.DataGridViewTextBoxColumn Surgery;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectPMH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Relationship;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condition;
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectFMH;
     }
 }

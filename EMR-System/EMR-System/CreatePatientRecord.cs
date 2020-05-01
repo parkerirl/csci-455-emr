@@ -177,6 +177,7 @@ namespace EMR_System
             if (patientExists == true)
             {
                 EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
+                Console.WriteLine("Patient exists, adding allergy");
             }
             else
             {

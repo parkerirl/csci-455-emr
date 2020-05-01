@@ -441,11 +441,11 @@ namespace EMR_System
 
 
 
-        public void RemoveAllergies(String ssn, String allergy, String date)
+        public void RemoveAllergies(String ssn, String allergy)
     {
       if (this.OpenConnection() == true)
       {
-        string query = $"DELETE FROM allergies WHERE allergies.patient_ssn = {ssn} AND allergies.allergy = {allergy} AND allergies.date_discovered = {date}";
+        string query = $"DELETE FROM allergies WHERE allergies.patient_ssn = '{ssn}' AND allergies.allergy = '{allergy}'";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         try
         {
@@ -569,7 +569,7 @@ namespace EMR_System
       int _age = Int32.Parse(age);
       if (this.OpenConnection() == true)
       {
-        string query = $"DELETE FROM family_medical_history WHERE family_medical_history.patient_ssn = {ssn} AND family_medical_history.relationship = {relationship} AND family_medical_history.disease = {disease} AND family_medical_history.age = {_age}";
+        string query = $"DELETE FROM family_medical_history WHERE family_medical_history.patient_ssn = '{ssn}' AND family_medical_history.relationship = '{relationship}' AND family_medical_history.disease = '{disease}' AND family_medical_history.age = '{_age}'";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         try
         {
@@ -633,11 +633,11 @@ namespace EMR_System
       }
     }
 
-    public void RemoveMedHistory(String ssn, String injury, bool hospitalized, bool surgery, String date)
+    public void RemoveMedHistory(String ssn, String injury, int hospitalized, int surgery)
     {
       if (this.OpenConnection() == true)
       {
-        string query = $"DELETE FROM medical_history WHERE medical_history.patient_ssn = {ssn} AND medical_history.injury = {injury} AND medical_history.hospitalized = {hospitalized} AND medical_history.surgery = {surgery} AND medical_history.date = {date}";
+        string query = $"DELETE FROM medical_history WHERE medical_history.patient_ssn = '{ssn}' AND medical_history.injury = '{injury}' AND medical_history.hospitalized = '{hospitalized}' AND medical_history.surgery_required = '{surgery}'";
         MySqlCommand cmd = new MySqlCommand(query, connection);
         try
         {
@@ -837,22 +837,5 @@ namespace EMR_System
       }
       return list;
     }
-
-    /*
-		//count
-		public int Count()
-		{
-		}
-
-		//backup
-		public void Backup()
-		{
-		}
-
-		//restore
-		public void Restore()
-		{
-		}
-		*/
   }
 }

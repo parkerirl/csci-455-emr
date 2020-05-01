@@ -16,32 +16,45 @@ namespace EMR_System
         private List<string> AllergyAllergy;
         private List<string> AllergyDoD;
 
+        private List<string> AllergyCBAllergy = new List<string>();
+
         private List<string>[] PatientMedicalHistoryList;
         private List<string> PMH_Item;
         private List<string> PMH_Hospitalized;
         private List<string> PMH_Surgery;
         private List<string> PMH_Date;
 
+        private List<string> PMHCB_Item = new List<string>();
+        private List<string> PMHCB_Hospitalized = new List<string>();
+        private List<string> PMHCB_Surgery = new List<string>();
+
         private List<string>[] FamilyMedicalHistoryList;
         private List<string> FMH_Relationship;
         private List<string> FMH_Condition;
         private List<string> FMH_Age;
 
+        private List<string> FMHCB_Relationship = new List<string>();
+        private List<string> FMHCB_Condition = new List<string>();
+        private List<string> FMHCB_Age = new List<string>();
+
+        private String[] PatientInfo;
+
         public PatientMoreInfo(String[] Patient)
         {
             InitializeComponent();
-            textSetFirstName.Text           = $"{Patient[0]}";
-            textSetLastName.Text            = $"{Patient[1]}";
-            textSetSSN.Text                 = $"{Patient[2]}";
-            textSetAddress.Text             = $"{Patient[3]}";
-            textSetPhone.Text               = $"{Patient[4]}";
-            textSetEmail.Text               = $"{Patient[5]}";
-            textSetSex.Text                 = $"{Patient[6]}";
-            textSetBirthday.Text            = $"{Patient[7]}";
-            textSetBloodType.Text           = $"{Patient[8]}";
-            textSetPrimaryPhysician.Text    = $"{Patient[9]}";
-            textSetInsuranceProvider.Text   = $"{Patient[10]}";
-            textSetInsuranceNumber.Text     = $"{Patient[11]}";
+            PatientInfo = Patient;
+            textSetFirstName.Text = $"{Patient[0]}";
+            textSetLastName.Text = $"{Patient[1]}";
+            textSetSSN.Text = $"{Patient[2]}";
+            textSetAddress.Text = $"{Patient[3]}";
+            textSetPhone.Text = $"{Patient[4]}";
+            textSetEmail.Text = $"{Patient[5]}";
+            textSetSex.Text = $"{Patient[6]}";
+            textSetBirthday.Text = $"{Patient[7]}";
+            textSetBloodType.Text = $"{Patient[8]}";
+            textSetPrimaryPhysician.Text = $"{Patient[9]}";
+            textSetInsuranceProvider.Text = $"{Patient[10]}";
+            textSetInsuranceNumber.Text = $"{Patient[11]}";
             ConnectDB EMRDatabase = new ConnectDB();
             AllergyList = EMRDatabase.ViewAllAllergies(Patient[2]);
             AllergyAllergy = AllergyList[0];
@@ -100,14 +113,70 @@ namespace EMR_System
 
         }
 
+
+
+        //delete allergy
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            for (int i = 0; i < AllergyCBAllergy.Count(); i++)
+            {
+                EMRDatabase.RemoveAllergies(PatientInfo[2], AllergyCBAllergy[i]);
+            }
+
+        }
+
+        //delete patient history
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            for (int i = 0; i < PMHCB_Item.Count(); i++)
+            {
+                EMRDatabase.RemoveMedHistory(PatientInfo[2], PMHCB_Item[i], Int32.Parse(PMHCB_Hospitalized[i]), Int32.Parse(PMHCB_Surgery[i]));
+            }
+        }
+
+        //delete family history
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            for (int i = 0; i < FMHCB_Relationship.Count(); i++)
+            {
+                EMRDatabase.RemoveFamilyMedHistory(PatientInfo[2], FMHCB_Relationship[i], FMHCB_Condition[i], FMHCB_Age[i]);
+            }
+        }
+
+        //allergy checkbox
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            {
+                AllergyCBAllergy.Add(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+        }
+
+        //patient history checkbox
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
+            {
+                PMHCB_Item.Add(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+                PMHCB_Hospitalized.Add(dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString());
+                PMHCB_Surgery.Add(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString());
+            }
         }
 
+        //family history checkbox
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+            {
+                FMHCB_Relationship.Add(dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString());
+                FMHCB_Condition.Add(dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString());
+                FMHCB_Age.Add(dataGridView3.Rows[e.RowIndex].Cells[2].Value.ToString());
+            }
         }
     }
+
 }
+
