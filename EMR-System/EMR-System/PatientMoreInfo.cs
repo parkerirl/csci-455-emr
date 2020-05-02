@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EMR_System
@@ -17,6 +12,7 @@ namespace EMR_System
         private List<string> AllergyDoD;
 
         private List<string> AllergyCBAllergy = new List<string>();
+        private List<string> AllergyCBDoD = new List<string>();
 
         private List<string>[] PatientMedicalHistoryList;
         private List<string> PMH_Item;
@@ -27,6 +23,7 @@ namespace EMR_System
         private List<string> PMHCB_Item = new List<string>();
         private List<string> PMHCB_Hospitalized = new List<string>();
         private List<string> PMHCB_Surgery = new List<string>();
+        private List<string> PMHCB_Date = new List<string>();
 
         private List<string>[] FamilyMedicalHistoryList;
         private List<string> FMH_Relationship;
@@ -121,7 +118,7 @@ namespace EMR_System
             ConnectDB EMRDatabase = new ConnectDB();
             for (int i = 0; i < AllergyCBAllergy.Count(); i++)
             {
-                EMRDatabase.RemoveAllergies(PatientInfo[2], AllergyCBAllergy[i]);
+                EMRDatabase.RemoveAllergies(PatientInfo[2], AllergyCBAllergy[i], AllergyCBDoD[i]);
             }
 
         }
@@ -132,7 +129,7 @@ namespace EMR_System
             ConnectDB EMRDatabase = new ConnectDB();
             for (int i = 0; i < PMHCB_Item.Count(); i++)
             {
-                EMRDatabase.RemoveMedHistory(PatientInfo[2], PMHCB_Item[i], Int32.Parse(PMHCB_Hospitalized[i]), Int32.Parse(PMHCB_Surgery[i]));
+                EMRDatabase.RemoveMedHistory(PatientInfo[2], PMHCB_Item[i], Int32.Parse(PMHCB_Hospitalized[i]), Int32.Parse(PMHCB_Surgery[i]), PMHCB_Date[i]);
             }
         }
 
@@ -151,7 +148,12 @@ namespace EMR_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 2)
             {
-                AllergyCBAllergy.Add(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null) AllergyCBAllergy.Add(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                if (dataGridView1.Rows[e.RowIndex].Cells[1].Value != null) AllergyCBDoD.Add(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                if (button1.Enabled == false)
+                {
+                    button1.Enabled = true;
+                }
             }
         }
 
@@ -160,9 +162,14 @@ namespace EMR_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
-                PMHCB_Item.Add(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
-                PMHCB_Hospitalized.Add(dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString());
-                PMHCB_Surgery.Add(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString());
+                if (dataGridView2.Rows[e.RowIndex].Cells[0].Value != null) PMHCB_Item.Add(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+                if (dataGridView2.Rows[e.RowIndex].Cells[1].Value != null)  PMHCB_Hospitalized.Add(dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString());
+                if (dataGridView2.Rows[e.RowIndex].Cells[2].Value != null)  PMHCB_Surgery.Add(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString());
+                if (dataGridView2.Rows[e.RowIndex].Cells[3].Value != null)  PMHCB_Date.Add(dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString());
+                if(button2.Enabled == false)
+                {
+                    button2.Enabled = true;
+                }
             }
         }
 
@@ -171,9 +178,13 @@ namespace EMR_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 3)
             {
-                FMHCB_Relationship.Add(dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString());
-                FMHCB_Condition.Add(dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString());
-                FMHCB_Age.Add(dataGridView3.Rows[e.RowIndex].Cells[2].Value.ToString());
+                if (dataGridView3.Rows[e.RowIndex].Cells[0].Value != null) FMHCB_Relationship.Add(dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString());
+                if (dataGridView3.Rows[e.RowIndex].Cells[1].Value != null) FMHCB_Condition.Add(dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString());
+                if (dataGridView3.Rows[e.RowIndex].Cells[2].Value != null) FMHCB_Age.Add(dataGridView3.Rows[e.RowIndex].Cells[2].Value.ToString());
+                if(button3.Enabled == false)
+                {
+                    button3.Enabled = true;
+                }
             }
         }
     }

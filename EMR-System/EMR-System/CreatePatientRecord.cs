@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EMR_System
@@ -155,7 +148,7 @@ namespace EMR_System
         //allergy date of discovery
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            AllergyDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            AllergyDate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -163,15 +156,15 @@ namespace EMR_System
             ConnectDB EMRDatabase = new ConnectDB();
             Boolean patientExists = EMRDatabase.PatientExists(SSN);
             //if the SSN is already in the DB
-            if (patientExists == true)
-            {
-                EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
-                Console.WriteLine("Patient exists, adding allergy");
-            }
-            else
-            {
+            //if (patientExists == true)
+            //{
+            //    EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
+            //    Console.WriteLine("Patient exists, adding allergy");
+            //}
+            //else
+            //{
                 EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
-            }
+            //}
             
         }
 

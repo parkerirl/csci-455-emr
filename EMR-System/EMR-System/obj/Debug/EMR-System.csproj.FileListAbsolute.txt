@@ -80,3 +80,4 @@ D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.c
 D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.exe
 D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR-System.pdb
 D:\VS Repos\EMR-System\csci-455-emr\EMR-System\EMR-System\obj\Debug\EMR_System.PatientPage.resources
+C:\Users\Parker\Desktop\EMR\EMR-System\EMR-System\obj\Debug\EMR_System.PatientPage.resources

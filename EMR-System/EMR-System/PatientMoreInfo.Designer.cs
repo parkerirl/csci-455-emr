@@ -528,6 +528,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.MidnightBlue;
             this.button2.CausesValidation = false;
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
             this.button2.Location = new System.Drawing.Point(741, 525);
@@ -542,6 +543,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.MidnightBlue;
             this.button3.CausesValidation = false;
+            this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
             this.button3.Location = new System.Drawing.Point(923, 525);
@@ -556,6 +558,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.MidnightBlue;
             this.button1.CausesValidation = false;
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(559, 525);
