@@ -77,7 +77,7 @@
             this.buttonAddUser.Name = "buttonAddUser";
             this.buttonAddUser.Size = new System.Drawing.Size(241, 146);
             this.buttonAddUser.TabIndex = 2;
-            this.buttonAddUser.Text = "Modify User Privileges";
+            this.buttonAddUser.Text = "Add/Modify Users";
             this.buttonAddUser.UseVisualStyleBackColor = false;
             this.buttonAddUser.Click += new System.EventHandler(this.ButtonAddUser_Click);
             // 

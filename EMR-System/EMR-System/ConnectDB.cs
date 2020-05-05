@@ -676,7 +676,25 @@ namespace EMR_System
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"INSERT INTO users VALUES ({ssn}, {fName}, {lName}, {email}, {address}, {phone}, {position})";
+                string query = $"INSERT INTO users VALUES ('{ssn}', '{fName}', '{lName}', '{email}', '{address}', '{phone}', '{position}')";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                this.CloseConnection();
+            }
+        }
+
+        public void ModifyUser(String old_ssn, String ssn, String fName, String lName, String email, String address, String phone, String position)
+        {
+            if (this.OpenConnection() == true)
+            {
+                string query = $"UPDATE users SET ssn='{ssn}',first_name='{fName}',last_name='{lName}',email='{email}',address='{address}',phone='{phone}',position='{position}' WHERE ssn='{old_ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -694,7 +712,7 @@ namespace EMR_System
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"DELETE FROM users WHERE users.ssn = {ssn}";
+                string query = $"DELETE FROM users WHERE users.ssn = '{ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -721,7 +739,7 @@ namespace EMR_System
 
             if (this.OpenConnection() == true)
             {
-                string query = $"SELECT ssn, first_name, last_name, email, address, phone, position FROM users WHERE users.ssn = {ssn}";
+                string query = $"SELECT ssn, first_name, last_name, email, address, phone, position FROM users WHERE users.ssn = '{ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
@@ -773,7 +791,7 @@ namespace EMR_System
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"INSERT INTO accounts VALUES ({ssn}, {username}, {password}, {privilege}, {status})";
+                string query = $"INSERT INTO accounts VALUES ('{ssn}', '{username}', '{password}', '{privilege}', '{status}')";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -787,11 +805,37 @@ namespace EMR_System
             }
         }
 
+        public void ModifyUserAccount(String ssn, String username, String password, String privilege, String status)
+        {
+            if (this.OpenConnection() == true)
+            {
+                string query = $"UPDATE accounts SET username='{username}',password='{password}',privilege='{privilege}',status='{status}' WHERE user_ssn='{ssn}'";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    if(ex.Number == 1054)
+                    {
+                        this.CloseConnection();
+                        this.AddUserAccount(ssn, username, password, privilege, status);
+                    }
+                    else
+                    { 
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                this.CloseConnection();
+            }
+        }
+
         public void RemoveUserAccount(String ssn)
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"DELETE FROM accounts WHERE accounts.user_ssn = {ssn}";
+                string query = $"DELETE FROM accounts WHERE accounts.user_ssn = '{ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -815,7 +859,7 @@ namespace EMR_System
 
             if (this.OpenConnection() == true)
             {
-                string query = $"SELECT username, password, privilege, status FROM accounts WHERE accounts.user_ssn = {ssn}";
+                string query = $"SELECT username, password, privilege, status FROM accounts WHERE accounts.user_ssn = '{ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
