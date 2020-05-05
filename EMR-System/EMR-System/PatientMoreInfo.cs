@@ -81,8 +81,8 @@ namespace EMR_System
             {
                 dataGridView3.Rows.Add(FMH_Relationship[i], FMH_Condition[i], FMH_Age[i]);
             }
-
         }
+
 
         //go back to previous menu
         private void buttonMoreInfo_Click(object sender, EventArgs e)
@@ -121,6 +121,21 @@ namespace EMR_System
                 EMRDatabase.RemoveAllergies(PatientInfo[2], AllergyCBAllergy[i], AllergyCBDoD[i]);
             }
 
+            List<DataGridViewRow> toDelete = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell cell = row.Cells[2] as DataGridViewCheckBoxCell;
+                if ((bool)cell.EditedFormattedValue == true)
+                {
+                    toDelete.Add(row);
+                }
+            }
+            foreach (DataGridViewRow row in toDelete)
+            {
+                dataGridView1.Rows.Remove(row);
+            }
+            dataGridView1.ClearSelection();
+            button1.Enabled = false;
         }
 
         //delete patient history
@@ -131,6 +146,22 @@ namespace EMR_System
             {
                 EMRDatabase.RemoveMedHistory(PatientInfo[2], PMHCB_Item[i], Int32.Parse(PMHCB_Hospitalized[i]), Int32.Parse(PMHCB_Surgery[i]), PMHCB_Date[i]);
             }
+
+            List<DataGridViewRow> toDelete = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                DataGridViewCheckBoxCell cell = row.Cells[4] as DataGridViewCheckBoxCell;
+                if ((bool)cell.EditedFormattedValue == true)
+                {
+                    toDelete.Add(row);
+                }
+            }
+            foreach (DataGridViewRow row in toDelete)
+            {
+                dataGridView2.Rows.Remove(row);
+            }
+            dataGridView2.ClearSelection();
+            button2.Enabled = false;
         }
 
         //delete family history
@@ -141,6 +172,22 @@ namespace EMR_System
             {
                 EMRDatabase.RemoveFamilyMedHistory(PatientInfo[2], FMHCB_Relationship[i], FMHCB_Condition[i], FMHCB_Age[i]);
             }
+
+            List<DataGridViewRow> toDelete = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                DataGridViewCheckBoxCell cell = row.Cells[3] as DataGridViewCheckBoxCell;
+                if ((bool)cell.EditedFormattedValue == true)
+                {
+                    toDelete.Add(row);
+                }
+            }
+            foreach (DataGridViewRow row in toDelete)
+            {
+                dataGridView3.Rows.Remove(row);
+            }
+            dataGridView3.ClearSelection();
+            button3.Enabled = false;
         }
 
         //allergy checkbox

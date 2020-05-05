@@ -278,6 +278,7 @@ namespace EMR_System
             }
         }
 
+
         public List<string>[] SelectByName(String name)
         {
             string query = $"SELECT first_name, last_name, birthday, ins_provider, address, email, phone, sex, primary_physician, blood_type, ins_number, ssn FROM patients WHERE patients.first_name = '{name}';";
@@ -544,7 +545,7 @@ namespace EMR_System
             int _age = Int32.Parse(age);
             if (this.OpenConnection() == true)
             {
-                string query = $"INSERT INTO family_medical_history VALUES ('{ssn}', '{relationship}', '{disease}', '{_age}');";
+                string query = $"INSERT INTO family_medical_history VALUES ('{ssn}', '{relationship}', '{disease}', '{_age}', default);";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -613,7 +614,7 @@ namespace EMR_System
 
             if (this.OpenConnection() == true)
             {
-                string query = $"INSERT INTO medical_history VALUES ('{ssn}', '{injury}', '{hos}', '{sur}', '{date}');";
+                string query = $"INSERT INTO medical_history VALUES ('{ssn}', '{injury}', '{hos}', '{sur}', '{date}', default);";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
