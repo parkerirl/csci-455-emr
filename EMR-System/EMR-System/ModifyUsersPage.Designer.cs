@@ -82,7 +82,7 @@
             this.buttonSaveAndSubmit.Location = new System.Drawing.Point(528, 537);
             this.buttonSaveAndSubmit.Name = "buttonSaveAndSubmit";
             this.buttonSaveAndSubmit.Size = new System.Drawing.Size(175, 68);
-            this.buttonSaveAndSubmit.TabIndex = 27;
+            this.buttonSaveAndSubmit.TabIndex = 13;
             this.buttonSaveAndSubmit.Text = "Save";
             this.buttonSaveAndSubmit.UseVisualStyleBackColor = false;
             this.buttonSaveAndSubmit.Click += new System.EventHandler(this.buttonSaveAndSubmit_Click);
@@ -132,7 +132,7 @@
             this.textSearch.Location = new System.Drawing.Point(494, 82);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(209, 31);
-            this.textSearch.TabIndex = 28;
+            this.textSearch.TabIndex = 0;
             // 
             // buttonSearch
             // 
@@ -155,7 +155,7 @@
             this.textSetAddress.Location = new System.Drawing.Point(300, 356);
             this.textSetAddress.Name = "textSetAddress";
             this.textSetAddress.Size = new System.Drawing.Size(209, 31);
-            this.textSetAddress.TabIndex = 33;
+            this.textSetAddress.TabIndex = 5;
             // 
             // textSetSSN
             // 
@@ -164,7 +164,7 @@
             this.textSetSSN.Location = new System.Drawing.Point(300, 259);
             this.textSetSSN.Name = "textSetSSN";
             this.textSetSSN.Size = new System.Drawing.Size(209, 31);
-            this.textSetSSN.TabIndex = 31;
+            this.textSetSSN.TabIndex = 3;
             // 
             // textSetPhoneNumber
             // 
@@ -173,7 +173,7 @@
             this.textSetPhoneNumber.Location = new System.Drawing.Point(300, 406);
             this.textSetPhoneNumber.Name = "textSetPhoneNumber";
             this.textSetPhoneNumber.Size = new System.Drawing.Size(209, 31);
-            this.textSetPhoneNumber.TabIndex = 34;
+            this.textSetPhoneNumber.TabIndex = 6;
             // 
             // textSetFirstName
             // 
@@ -182,7 +182,7 @@
             this.textSetFirstName.Location = new System.Drawing.Point(300, 159);
             this.textSetFirstName.Name = "textSetFirstName";
             this.textSetFirstName.Size = new System.Drawing.Size(209, 31);
-            this.textSetFirstName.TabIndex = 30;
+            this.textSetFirstName.TabIndex = 1;
             // 
             // labelFirstName
             // 
@@ -268,7 +268,7 @@
             this.textSetLastName.Location = new System.Drawing.Point(300, 209);
             this.textSetLastName.Name = "textSetLastName";
             this.textSetLastName.Size = new System.Drawing.Size(209, 31);
-            this.textSetLastName.TabIndex = 38;
+            this.textSetLastName.TabIndex = 2;
             // 
             // comboSetPosition
             // 
@@ -284,7 +284,7 @@
             this.comboSetPosition.Location = new System.Drawing.Point(300, 457);
             this.comboSetPosition.Name = "comboSetPosition";
             this.comboSetPosition.Size = new System.Drawing.Size(209, 33);
-            this.comboSetPosition.TabIndex = 36;
+            this.comboSetPosition.TabIndex = 7;
             // 
             // comboSetStatus
             // 
@@ -298,7 +298,7 @@
             this.comboSetStatus.Location = new System.Drawing.Point(804, 385);
             this.comboSetStatus.Name = "comboSetStatus";
             this.comboSetStatus.Size = new System.Drawing.Size(209, 33);
-            this.comboSetStatus.TabIndex = 52;
+            this.comboSetStatus.TabIndex = 12;
             // 
             // textSetPassword
             // 
@@ -307,7 +307,7 @@
             this.textSetPassword.Location = new System.Drawing.Point(804, 285);
             this.textSetPassword.Name = "textSetPassword";
             this.textSetPassword.Size = new System.Drawing.Size(209, 31);
-            this.textSetPassword.TabIndex = 54;
+            this.textSetPassword.TabIndex = 9;
             // 
             // textSetUsername
             // 
@@ -316,7 +316,7 @@
             this.textSetUsername.Location = new System.Drawing.Point(804, 235);
             this.textSetUsername.Name = "textSetUsername";
             this.textSetUsername.Size = new System.Drawing.Size(209, 31);
-            this.textSetUsername.TabIndex = 47;
+            this.textSetUsername.TabIndex = 8;
             // 
             // label2
             // 
@@ -369,7 +369,7 @@
             this.textSetEmail.Location = new System.Drawing.Point(300, 306);
             this.textSetEmail.Name = "textSetEmail";
             this.textSetEmail.Size = new System.Drawing.Size(209, 31);
-            this.textSetEmail.TabIndex = 55;
+            this.textSetEmail.TabIndex = 4;
             // 
             // comboSetPrivilege
             // 
@@ -383,7 +383,7 @@
             this.comboSetPrivilege.Location = new System.Drawing.Point(804, 332);
             this.comboSetPrivilege.Name = "comboSetPrivilege";
             this.comboSetPrivilege.Size = new System.Drawing.Size(209, 33);
-            this.comboSetPrivilege.TabIndex = 56;
+            this.comboSetPrivilege.TabIndex = 10;
             // 
             // ModifyUsersPage
             // 
