@@ -164,16 +164,7 @@ namespace EMR_System
         {
             ConnectDB EMRDatabase = new ConnectDB();
             Boolean patientExists = EMRDatabase.PatientExists(SSN);
-            //if the SSN is already in the DB
-            //if (patientExists == true)
-            //{
-            //    EMRDatabase.AddAllergiesExisting(SSN, Allergy, AllergyDate);
-            //    Console.WriteLine("Patient exists, adding allergy");
-            //}
-            //else
-            //{
             EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
-            //}
 
         }
 
@@ -213,6 +204,7 @@ namespace EMR_System
             buttonSubmit.Visible = false;
             button2.Visible = true;
             button3.Visible = true;
+            
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

@@ -100,7 +100,10 @@ namespace EMR_System
 
         private void SearchPatientPage_Load(object sender, EventArgs e)
         {
-
+            if (LoginPage.userType.Equals("admin") || LoginPage.userType.Equals("doctor"))
+            {
+                buttonAddPrescription.Visible = true;
+            }
         }
 
         //Patient SSN to search
@@ -127,26 +130,35 @@ namespace EMR_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
-                //populate boxes on page
-                textSetFirstName.Text = Fname[e.RowIndex];
-                textSetLastName.Text = Lname[e.RowIndex];
-                textSetSSN.Text = Ssn[e.RowIndex];
-                textSetAddress.Text = Address[e.RowIndex];
-                textSetPhoneNumber.Text = Phone[e.RowIndex];
 
-                //populate list to display more info
-                PatientsMoreInfo[0] = Fname[e.RowIndex];
-                PatientsMoreInfo[1] = Lname[e.RowIndex];
-                PatientsMoreInfo[2] = Ssn[e.RowIndex];
-                PatientsMoreInfo[3] = Address[e.RowIndex];
-                PatientsMoreInfo[4] = Phone[e.RowIndex];
-                PatientsMoreInfo[5] = Email[e.RowIndex];
-                PatientsMoreInfo[6] = Sex[e.RowIndex];
-                PatientsMoreInfo[7] = Birthday[e.RowIndex];
-                PatientsMoreInfo[8] = BloodType[e.RowIndex];
-                PatientsMoreInfo[9] = PrimaryPhysician[e.RowIndex];
-                PatientsMoreInfo[10] = InsProvider[e.RowIndex];
-                PatientsMoreInfo[11] = InsNumber[e.RowIndex];
+                try
+                {
+                    //populate boxes on page
+                    textSetFirstName.Text = Fname[e.RowIndex];
+                    textSetLastName.Text = Lname[e.RowIndex];
+                    textSetSSN.Text = Ssn[e.RowIndex];
+                    textSetAddress.Text = Address[e.RowIndex];
+                    textSetPhoneNumber.Text = Phone[e.RowIndex];
+
+                    //populate list to display more info
+                    PatientsMoreInfo[0] = Fname[e.RowIndex];
+                    PatientsMoreInfo[1] = Lname[e.RowIndex];
+                    PatientsMoreInfo[2] = Ssn[e.RowIndex];
+                    PatientsMoreInfo[3] = Address[e.RowIndex];
+                    PatientsMoreInfo[4] = Phone[e.RowIndex];
+                    PatientsMoreInfo[5] = Email[e.RowIndex];
+                    PatientsMoreInfo[6] = Sex[e.RowIndex];
+                    PatientsMoreInfo[7] = Birthday[e.RowIndex];
+                    PatientsMoreInfo[8] = BloodType[e.RowIndex];
+                    PatientsMoreInfo[9] = PrimaryPhysician[e.RowIndex];
+                    PatientsMoreInfo[10] = InsProvider[e.RowIndex];
+                    PatientsMoreInfo[11] = InsNumber[e.RowIndex];
+                } catch(Exception)
+                {
+                    return;
+                }
+
+                buttonAddPrescription.Enabled = true;
             }
         }
 
@@ -185,6 +197,8 @@ namespace EMR_System
             labelConfirm.Visible = false;
             buttonCancel.Visible = false;
             buttonSubmit.Visible = false;
+
+            buttonAddPrescription.Enabled = false;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
@@ -193,6 +207,12 @@ namespace EMR_System
             labelConfirm.Visible = false;
             buttonCancel.Visible = false;
             buttonSubmit.Visible = false;
+        }
+
+        private void ButtonAddPrescription_Click(object sender, EventArgs e)
+        {
+            AddPrescription add = new AddPrescription();
+            add.Show();
         }
     }
 }

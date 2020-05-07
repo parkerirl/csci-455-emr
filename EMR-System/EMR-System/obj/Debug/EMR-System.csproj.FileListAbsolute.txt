@@ -113,3 +113,4 @@ D:\VS Repos\EMR-System 2\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CoreC
 D:\VS Repos\EMR-System 2\EMR-System\EMR-System\obj\Debug\EMR-System.csproj.CopyComplete
 D:\VS Repos\EMR-System 2\EMR-System\EMR-System\obj\Debug\EMR-System.exe
 D:\VS Repos\EMR-System 2\EMR-System\EMR-System\obj\Debug\EMR-System.pdb
+D:\VS Repos\EMR-System 2\EMR-System\EMR-System\obj\Debug\EMR_System.AddPrescription.resources

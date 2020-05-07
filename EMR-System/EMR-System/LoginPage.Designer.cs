@@ -82,9 +82,9 @@
             this.buttonLogin.BackColor = System.Drawing.Color.MidnightBlue;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLogin.Location = new System.Drawing.Point(367, 435);
+            this.buttonLogin.Location = new System.Drawing.Point(395, 351);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(401, 122);
+            this.buttonLogin.Size = new System.Drawing.Size(372, 100);
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -94,7 +94,7 @@
             // 
             this.labelBadLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBadLogin.ForeColor = System.Drawing.Color.Red;
-            this.labelBadLogin.Location = new System.Drawing.Point(330, 354);
+            this.labelBadLogin.Location = new System.Drawing.Point(328, 521);
             this.labelBadLogin.Name = "labelBadLogin";
             this.labelBadLogin.Size = new System.Drawing.Size(481, 55);
             this.labelBadLogin.TabIndex = 5;
