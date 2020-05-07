@@ -31,14 +31,17 @@ namespace EMR_System
         {
             string name = textSetPrescriptionName.Text;
             string dosage = textDosage.Text;
-            string frequency = comboFrequency.Text;
-            string renew = comboRenew.Text;
+            string expiration = dateTimePicker1.Value.ToString("yyyy-MM-dd");
 
-            if (name.Trim().Equals("") || dosage.Trim().Equals("") || frequency.Trim().Equals("") || renew.Trim().Equals(""))
+            if (name.Trim().Equals("") || dosage.Trim().Equals("") || expiration.Trim().Equals(""))
             {
                 labelErrorText.Visible = true;
             } else
             {
+
+                ConnectDB EMRDatabase = new ConnectDB();
+                EMRDatabase.AddPrescription(SearchPatientPage.passed_SSN, dosage, name, expiration);
+
                 this.Close();
             }
 

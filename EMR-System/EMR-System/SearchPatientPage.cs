@@ -10,6 +10,7 @@ namespace EMR_System
         private String selectedSSN;
         private String FirstName;
 
+        public static string passed_SSN;
         public static Boolean confirmation = false;
 
         private List<string> Fname;
@@ -158,7 +159,10 @@ namespace EMR_System
                     return;
                 }
 
+                passed_SSN = PatientsMoreInfo[2];
                 buttonAddPrescription.Enabled = true;
+                buttonMoreInfo.Enabled = true;
+                deleteButton.Enabled = true;
             }
         }
 
@@ -199,6 +203,8 @@ namespace EMR_System
             buttonSubmit.Visible = false;
 
             buttonAddPrescription.Enabled = false;
+            buttonMoreInfo.Enabled = false;
+            deleteButton.Enabled = false;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
