@@ -35,5 +35,19 @@ namespace EMR_System
             login.Show();
             this.Close();
         }
+
+        private void buttonPatientSearch_Click(object sender, EventArgs e)
+        {
+            SearchPatientPage search = new SearchPatientPage();
+            search.Show();
+            this.Close();
+        }
+
+        private void buttonCreateRecord_Click(object sender, EventArgs e)
+        {
+            CreatePatientRecord cpr = new CreatePatientRecord();
+            cpr.Show();
+            this.Close();
+        }
     }
 }

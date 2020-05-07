@@ -33,9 +33,15 @@ namespace EMR_System
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            if (LoginPage.userType.Equals("admin"))
+            if (LoginPage.userType.Equals("Administrator"))
             {
                 MainPage_Admin main = new MainPage_Admin();
+                main.Show();
+                this.Close();
+            }
+            if (LoginPage.userType.Equals("Clerk"))
+            {
+                MainPage_Clerk main = new MainPage_Clerk();
                 main.Show();
                 this.Close();
             }

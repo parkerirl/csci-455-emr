@@ -122,6 +122,7 @@
             this.buttonCreateRecord.TabIndex = 22;
             this.buttonCreateRecord.Text = "Create/Modify Patient Record";
             this.buttonCreateRecord.UseVisualStyleBackColor = false;
+            this.buttonCreateRecord.Click += new System.EventHandler(this.buttonCreateRecord_Click);
             // 
             // buttonPatientSearch
             // 
@@ -135,6 +136,7 @@
             this.buttonPatientSearch.TabIndex = 21;
             this.buttonPatientSearch.Text = "Search for Patient";
             this.buttonPatientSearch.UseVisualStyleBackColor = false;
+            this.buttonPatientSearch.Click += new System.EventHandler(this.buttonPatientSearch_Click);
             // 
             // MainPage_Clerk
             // 
