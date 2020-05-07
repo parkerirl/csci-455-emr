@@ -51,6 +51,7 @@ namespace EMR_System
                 //The two most common error numbers when connecting are as follows:
                 //0: Cannot connect to server.
                 //1045: Invalid user name and/or password.
+
                 switch (ex.Number)
                 {
                     case 0:
@@ -863,7 +864,7 @@ namespace EMR_System
                 string query = $"SELECT username, password, privilege, status FROM accounts WHERE accounts.user_ssn = '{ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
+                
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
@@ -875,6 +876,50 @@ namespace EMR_System
                 this.CloseConnection();
             }
             return list;
+        }
+
+        public String ValidateLogin(String username, String password)
+        {
+            String accountType = "";
+            String status = "";
+            String ssn = "";
+            if (this.OpenConnection() == true)
+            {
+                string query = $"SELECT user_ssn, status FROM accounts WHERE accounts.username = '{username}' AND accounts.password = '{password}'";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                try
+                {
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        ssn = dataReader["user_ssn"].ToString();
+                        status = dataReader["status"].ToString();
+                    }
+                    dataReader.Close();
+                    if (status == "Inactive")
+                    {
+                        accountType = "Inactive";
+                    }
+                    else
+                    {
+                        query = $"SELECT position FROM users WHERE users.ssn = '{ssn}'";
+                        cmd = new MySqlCommand(query, connection);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            accountType = dataReader["position"].ToString();
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    accountType = "Invalid";
+                }
+
+                this.CloseConnection();
+            }
+            return accountType;
         }
     }
 }
