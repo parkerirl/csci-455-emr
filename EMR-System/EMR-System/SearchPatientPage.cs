@@ -94,7 +94,7 @@ namespace EMR_System
 
             for (int i = 0; i < Ssn.Count; i++)
             {
-                dataGridView1.Rows.Add(Fname[i], Birthday[i], InsNumber[i]);
+                dataGridView1.Rows.Add(Fname[i], Lname[i], Birthday[i], InsNumber[i]);
             }
         }
 
@@ -125,7 +125,7 @@ namespace EMR_System
         }
         void grd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
                 //populate boxes on page
                 textSetFirstName.Text = Fname[e.RowIndex];
@@ -178,6 +178,8 @@ namespace EMR_System
         {
             ConnectDB EMRDatabase = new ConnectDB();
             EMRDatabase.Delete(selectedSSN);
+
+            Button1_Click(sender, e);
 
             confirmationBox.Visible = false;
             labelConfirm.Visible = false;

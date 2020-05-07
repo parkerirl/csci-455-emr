@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonBack = new System.Windows.Forms.Button();
             this.textSetLastName = new System.Windows.Forms.TextBox();
             this.labelLastName = new System.Windows.Forms.Label();
@@ -48,15 +48,16 @@
             this.labelResults = new System.Windows.Forms.Label();
             this.buttonMoreInfo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ins_provider = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteButton = new System.Windows.Forms.Button();
             this.confirmationBox = new System.Windows.Forms.PictureBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelConfirm = new System.Windows.Forms.Label();
+            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ins_provider = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmationBox)).BeginInit();
             this.SuspendLayout();
@@ -260,17 +261,18 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.f_name,
+            this.l_name,
             this.dob,
             this.ins_provider,
             this.select});
@@ -283,28 +285,6 @@
             this.dataGridView1.TabIndex = 90;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // f_name
-            // 
-            this.f_name.HeaderText = "First Name";
-            this.f_name.Name = "f_name";
-            // 
-            // dob
-            // 
-            this.dob.HeaderText = "DOB";
-            this.dob.Name = "dob";
-            // 
-            // ins_provider
-            // 
-            this.ins_provider.HeaderText = "Insurance Provider";
-            this.ins_provider.Name = "ins_provider";
-            // 
-            // select
-            // 
-            this.select.HeaderText = "Select";
-            this.select.Name = "select";
-            this.select.Text = "Select";
-            this.select.UseColumnTextForButtonValue = true;
             // 
             // deleteButton
             // 
@@ -369,6 +349,33 @@
             this.labelConfirm.Text = "Please confirm your action:";
             this.labelConfirm.Visible = false;
             // 
+            // f_name
+            // 
+            this.f_name.HeaderText = "First Name";
+            this.f_name.Name = "f_name";
+            // 
+            // l_name
+            // 
+            this.l_name.HeaderText = "Last Name";
+            this.l_name.Name = "l_name";
+            // 
+            // dob
+            // 
+            this.dob.HeaderText = "DOB";
+            this.dob.Name = "dob";
+            // 
+            // ins_provider
+            // 
+            this.ins_provider.HeaderText = "Insurance Provider";
+            this.ins_provider.Name = "ins_provider";
+            // 
+            // select
+            // 
+            this.select.HeaderText = "Select";
+            this.select.Name = "select";
+            this.select.Text = "Select";
+            this.select.UseColumnTextForButtonValue = true;
+            // 
             // SearchPatientPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,14 +439,15 @@
         private System.Windows.Forms.Label labelResults;
         private System.Windows.Forms.Button buttonMoreInfo;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ins_provider;
-        private System.Windows.Forms.DataGridViewButtonColumn select;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.PictureBox confirmationBox;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelConfirm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ins_provider;
+        private System.Windows.Forms.DataGridViewButtonColumn select;
     }
 }
