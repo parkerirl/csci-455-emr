@@ -28,7 +28,7 @@ namespace EMR_System
 
         private void CreatePatientRecord_Load(object sender, EventArgs e)
         {
-
+            AllergyDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace EMR_System
             labelConfirm.Visible = true; labelConfirm.BringToFront();
             buttonCancel.Visible = true; buttonCancel.BringToFront();
             buttonSubmit.Visible = true; buttonSubmit.BringToFront();
-            
+
 
         }
 
@@ -71,8 +71,17 @@ namespace EMR_System
             SSN = textSetSSN.Text;
             ConnectDB EMRDatabase = new ConnectDB();
             Boolean patientExists = EMRDatabase.PatientExists(SSN);
-            if (patientExists == true) button1.Text = "Update Patient";
-            else button1.Text = "Create Patient";
+            if (patientExists == true)
+            {
+                button1.Text = "Update Patient";
+            }
+            else
+            {
+                button1.Text = "Create Patient Record";
+                button2.Visible = false;
+                button3.Visible = false;
+            }
+                
         }
 
         //Address
@@ -163,9 +172,9 @@ namespace EMR_System
             //}
             //else
             //{
-                EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
+            EMRDatabase.AddAllergies(SSN, Allergy, AllergyDate);
             //}
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -202,6 +211,8 @@ namespace EMR_System
             labelConfirm.Visible = false;
             buttonCancel.Visible = false;
             buttonSubmit.Visible = false;
+            button2.Visible = true;
+            button3.Visible = true;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

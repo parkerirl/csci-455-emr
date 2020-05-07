@@ -63,7 +63,7 @@
             this.buttonCreateRecord.Name = "buttonCreateRecord";
             this.buttonCreateRecord.Size = new System.Drawing.Size(241, 146);
             this.buttonCreateRecord.TabIndex = 1;
-            this.buttonCreateRecord.Text = "Create Patient Record";
+            this.buttonCreateRecord.Text = "Create/Modify Patient Record";
             this.buttonCreateRecord.UseVisualStyleBackColor = false;
             this.buttonCreateRecord.Click += new System.EventHandler(this.ButtonCreateRecord_Click);
             // 

@@ -417,6 +417,7 @@
             this.button2.TabIndex = 82;
             this.button2.Text = "Add Allergy";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
@@ -431,6 +432,7 @@
             this.button3.TabIndex = 83;
             this.button3.Text = "Add Medical History";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonCancel
