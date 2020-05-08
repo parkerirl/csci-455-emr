@@ -28,7 +28,7 @@ namespace EMR_System
             server = "localhost"; //connect to localhost
             database = "emrs_csci_455"; //schema to connect to in MySQL
             uid = "root"; //MySQL Server Username !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S USERNAME BEFORE IT WILL WORK!!!
-            password = "password"; //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
+            password = "Jigjag$0"; //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
 
             string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
               database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -872,6 +872,27 @@ namespace EMR_System
                     list[1].Add(dataReader["password"].ToString());
                     list[2].Add(dataReader["privilege"].ToString());
                     list[3].Add(dataReader["status"].ToString());
+                }
+                this.CloseConnection();
+            }
+            return list;
+        }
+
+        //get ssn from user username and password
+        public List<string>[] GetAccountSSN(String username, String password)
+        {
+            List<string>[] list = new List<string>[1];
+            list[0] = new List<string>(); //ssn
+            if (this.OpenConnection() == true)
+            {
+                string query = $"SELECT user_ssn FROM accounts WHERE accounts.username = '{username}' AND accounts.password = '{password}'";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["user_ssn"].ToString());
                 }
                 this.CloseConnection();
             }

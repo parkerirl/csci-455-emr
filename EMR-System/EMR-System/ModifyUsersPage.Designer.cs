@@ -280,11 +280,13 @@
             "Administrator",
             "Physician",
             "Pharmacist",
-            "Clerk"});
+            "Clerk",
+            "Patient"});
             this.comboSetPosition.Location = new System.Drawing.Point(300, 457);
             this.comboSetPosition.Name = "comboSetPosition";
             this.comboSetPosition.Size = new System.Drawing.Size(209, 33);
             this.comboSetPosition.TabIndex = 7;
+            this.comboSetPosition.SelectedIndexChanged += new System.EventHandler(this.comboSetPosition_SelectedIndexChanged);
             // 
             // comboSetStatus
             // 
@@ -384,6 +386,7 @@
             this.comboSetPrivilege.Name = "comboSetPrivilege";
             this.comboSetPrivilege.Size = new System.Drawing.Size(209, 33);
             this.comboSetPrivilege.TabIndex = 10;
+            this.comboSetPrivilege.SelectedIndexChanged += new System.EventHandler(this.comboSetPrivilege_SelectedIndexChanged);
             // 
             // ModifyUsersPage
             // 

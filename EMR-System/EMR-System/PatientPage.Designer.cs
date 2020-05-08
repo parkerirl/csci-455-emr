@@ -33,6 +33,7 @@
             this.labelStatus = new System.Windows.Forms.Label();
             this.labelCurrentUserName = new System.Windows.Forms.Label();
             this.labelLoggedInAs = new System.Windows.Forms.Label();
+            this.buttonPatientSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonLogout
@@ -93,12 +94,27 @@
             this.labelLoggedInAs.Text = "User:";
             this.labelLoggedInAs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonPatientSearch
+            // 
+            this.buttonPatientSearch.BackColor = System.Drawing.Color.MidnightBlue;
+            this.buttonPatientSearch.CausesValidation = false;
+            this.buttonPatientSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPatientSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonPatientSearch.Location = new System.Drawing.Point(454, 146);
+            this.buttonPatientSearch.Name = "buttonPatientSearch";
+            this.buttonPatientSearch.Size = new System.Drawing.Size(241, 146);
+            this.buttonPatientSearch.TabIndex = 25;
+            this.buttonPatientSearch.Text = "View My Info";
+            this.buttonPatientSearch.UseVisualStyleBackColor = false;
+            this.buttonPatientSearch.Click += new System.EventHandler(this.buttonPatientSearch_Click);
+            // 
             // PatientPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1111, 617);
+            this.Controls.Add(this.buttonPatientSearch);
             this.Controls.Add(this.labelStatusType);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelCurrentUserName);
@@ -120,5 +136,6 @@
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label labelCurrentUserName;
         private System.Windows.Forms.Label labelLoggedInAs;
+        private System.Windows.Forms.Button buttonPatientSearch;
     }
 }

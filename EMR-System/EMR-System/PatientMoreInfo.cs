@@ -36,9 +36,23 @@ namespace EMR_System
 
         private String[] PatientInfo;
 
-        public PatientMoreInfo(String[] Patient)
+        public PatientMoreInfo(String[] Patient, Boolean isPatient)
         {
             InitializeComponent();
+
+            if (isPatient == false)
+            {
+                button1.Visible = true; button1.BringToFront();
+                button2.Visible = true; button2.BringToFront();
+                button3.Visible = true; button3.BringToFront();
+            } 
+            else
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
+
             PatientInfo = Patient;
             textSetFirstName.Text = $"{Patient[0]}";
             textSetLastName.Text = $"{Patient[1]}";

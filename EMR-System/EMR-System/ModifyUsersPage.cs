@@ -179,5 +179,15 @@ namespace EMR_System
                 MessageBox.Show("Please fill all fields");
             }
         }
+
+        private void comboSetPrivilege_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboSetPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

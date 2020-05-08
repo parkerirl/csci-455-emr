@@ -118,7 +118,7 @@ namespace EMR_System
         {
             if (PatientsMoreInfo != null)
             {
-                PatientMoreInfo moreInfo = new PatientMoreInfo(PatientsMoreInfo);
+                PatientMoreInfo moreInfo = new PatientMoreInfo(PatientsMoreInfo, false);
                 moreInfo.Show();
             }
         }

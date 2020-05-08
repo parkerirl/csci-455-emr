@@ -80,6 +80,15 @@ namespace EMR_System
                     mainPageClerk.Show();
                     success = true;
                 }
+                else if (userType == "Patient")
+                {
+                    List<string>[] ssnList = EMRDatabase.GetAccountSSN(id, password);
+                    String ssnToSend = ssnList[0][0];
+                    this.Hide();
+                    patientPage = new PatientPage(ssnToSend);
+                    patientPage.Show();
+                    success = true;
+                }
                 else
                 {
                     success = false;
