@@ -66,8 +66,17 @@ namespace EMR_System
             textSetPrimaryPhysician.Text = $"{Patient[9]}";
             textSetInsuranceProvider.Text = $"{Patient[10]}";
             textSetInsuranceNumber.Text = $"{Patient[11]}";
+
+            loadData(Patient[2]);
+        }
+
+        private void loadData(String ssn)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
             ConnectDB EMRDatabase = new ConnectDB();
-            AllergyList = EMRDatabase.ViewAllAllergies(Patient[2]);
+            AllergyList = EMRDatabase.ViewAllAllergies(ssn);
             AllergyAllergy = AllergyList[0];
             AllergyDoD = AllergyList[1];
 
@@ -76,7 +85,7 @@ namespace EMR_System
                 dataGridView1.Rows.Add(AllergyAllergy[i], AllergyDoD[i]);
             }
 
-            PatientMedicalHistoryList = EMRDatabase.ViewMedHistory(Patient[2]);
+            PatientMedicalHistoryList = EMRDatabase.ViewMedHistory(ssn);
             PMH_Item = PatientMedicalHistoryList[0];
             PMH_Hospitalized = PatientMedicalHistoryList[1];
             PMH_Surgery = PatientMedicalHistoryList[2];
@@ -87,7 +96,7 @@ namespace EMR_System
             }
 
 
-            FamilyMedicalHistoryList = EMRDatabase.ViewFamilyMedHistory(Patient[2]);
+            FamilyMedicalHistoryList = EMRDatabase.ViewFamilyMedHistory(ssn);
             FMH_Relationship = FamilyMedicalHistoryList[0];
             FMH_Condition = FamilyMedicalHistoryList[1];
             FMH_Age = FamilyMedicalHistoryList[2];
@@ -155,10 +164,28 @@ namespace EMR_System
         //delete patient history
         private void button2_Click(object sender, EventArgs e)
         {
+            int hospitalized = 0;
+            int surgery = 0;
             ConnectDB EMRDatabase = new ConnectDB();
             for (int i = 0; i < PMHCB_Item.Count(); i++)
             {
-                EMRDatabase.RemoveMedHistory(PatientInfo[2], PMHCB_Item[i], Int32.Parse(PMHCB_Hospitalized[i]), Int32.Parse(PMHCB_Surgery[i]), PMHCB_Date[i]);
+                if(PMHCB_Hospitalized[i] == "Yes")
+                {
+                    hospitalized = 1;
+                }
+                else
+                {
+                    hospitalized = 0;
+                }
+                if (PMHCB_Surgery[i] == "Yes")
+                {
+                    surgery = 1;
+                }
+                else
+                {
+                    surgery = 0;
+                }
+                EMRDatabase.RemoveMedHistory(PatientInfo[2], PMHCB_Item[i], hospitalized, surgery, PMHCB_Date[i]);
             }
 
             List<DataGridViewRow> toDelete = new List<DataGridViewRow>();
@@ -247,6 +274,117 @@ namespace EMR_System
                     button3.Enabled = true;
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            allergy.Show();
+        }
+
+        private void cancelAllergy_Click(object sender, EventArgs e)
+        {
+            panel1.Show();
+            allergy.Hide();
+            allergyText.Text = null;
+            allergyDate.Value = DateTime.Now;
+        }
+
+        private void saveAllergyBtn_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            EMRDatabase.AddAllergies(textSetSSN.Text, allergyText.Text, allergyDate.Value.ToString("yyyy-MM-dd"));
+            loadData(textSetSSN.Text);
+            panel1.Show();
+            allergy.Hide();
+        }
+
+        private void allergyText_TextChanged(object sender, EventArgs e)
+        {
+            if(allergyText.Text == null || allergyText.Text == "")
+            {
+                saveAllergyBtn.Enabled = false;
+            }
+            else
+            {
+                saveAllergyBtn.Enabled = true;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (injury.Text == null || injury.Text == "")
+            {
+                patHistSave.Enabled = false;
+            }
+            else
+            {
+                patHistSave.Enabled = true;
+            }
+        }
+
+        private void patHistCancel_Click(object sender, EventArgs e)
+        {
+            panel1.Show();
+            patientHistory.Hide();
+            injury.Text = null;
+            datePatHist.Value = DateTime.Now;
+            comboHospitalized.SelectedItem = null;
+            comboSurgery.SelectedItem = null;
+        }
+
+        private void patHistSave_Click(object sender, EventArgs e)
+        {
+            bool hospitalized = false;
+            bool surgery = false;
+
+            if(comboHospitalized.SelectedItem.ToString() == "Yes")
+            {
+                hospitalized = true;
+            }
+
+            if (comboSurgery.SelectedItem.ToString() == "Yes")
+            {
+                surgery = true;
+            }
+
+            ConnectDB EMRDatabase = new ConnectDB();
+            EMRDatabase.AddMedHistory(textSetSSN.Text, injury.Text, hospitalized, surgery, datePatHist.Value.ToString("yyyy-MM-dd"));
+            loadData(textSetSSN.Text);
+            panel1.Show();
+            patientHistory.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            comboHospitalized.SelectedItem = "No";
+            comboSurgery.SelectedItem = "No";
+            panel1.Hide();
+            patientHistory.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ConnectDB EMRDatabase = new ConnectDB();
+            EMRDatabase.AddFamilyMedHistory(textSetSSN.Text, textRelaionship.Text, textDisease.Text, textAge.Text);
+            loadData(textSetSSN.Text);
+            panel1.Show();
+            famHist.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            panel1.Show();
+            famHist.Hide();
+            textRelaionship.Text = null;
+            textAge.Text = null;
+            textDisease.Text = null;
+        }
+
+        private void showFamHist_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            famHist.Show();
         }
     }
 

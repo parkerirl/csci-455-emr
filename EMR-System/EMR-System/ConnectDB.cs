@@ -28,7 +28,7 @@ namespace EMR_System
             server = "localhost"; //connect to localhost
             database = "emrs_csci_455"; //schema to connect to in MySQL
             uid = "root"; //MySQL Server Username !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S USERNAME BEFORE IT WILL WORK!!!
-            password = "Jigjag$0"; //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
+            password = "password"; //MySQL Server Password !!!THIS IS HARDCODED, MUST CHANGE TO YOUR CONFIGURATION'S PASSWORD BEFORE IT WILL WORK!!!
 
             string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
               database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -403,7 +403,7 @@ namespace EMR_System
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"INSERT INTO allergies (patient_ssn, allergy, date_discovered) VALUES ('{ssn}', '{allergy}', '{date}')";
+                string query = $"INSERT INTO allergies (patient_ssn, allergy, date_discovered, id) VALUES ('{ssn}', '{allergy}', '{date}', default)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -434,7 +434,6 @@ namespace EMR_System
                 this.CloseConnection();
             }
         }
-
 
 
         public void RemoveAllergies(String ssn, String allergy, String date_discovered)
@@ -665,8 +664,22 @@ namespace EMR_System
                 while (dataReader.Read())
                 {
                     list[0].Add(dataReader["injury"].ToString());
-                    list[1].Add(dataReader["hospitalized"].ToString());
-                    list[2].Add(dataReader["surgery_required"].ToString());
+                    if (dataReader["hospitalized"].ToString() == "0")
+                    {
+                        list[1].Add("No");
+                    }
+                    else
+                    {
+                        list[1].Add("Yes");
+                    }
+                    if (dataReader["surgery_required"].ToString() == "0")
+                    {
+                        list[2].Add("No");
+                    }
+                    else
+                    {
+                        list[2].Add("Yes");
+                    }
                     list[3].Add(Convert.ToDateTime(dataReader["date"]).ToString("yyyy-MM-dd"));
                 }
                 this.CloseConnection();
