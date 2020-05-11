@@ -342,7 +342,7 @@ namespace EMR_System
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"INSERT INTO prescriptions VALUES ({ssn}, {dosage}, {medication}, {exp})";
+                string query = $"INSERT INTO prescriptions VALUES ('{ssn}', '{dosage}', '{medication}', '{exp}', default)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -360,7 +360,7 @@ namespace EMR_System
         {
             if (this.OpenConnection() == true)
             {
-                string query = $"DELETE FROM prescriptions WHERE prescriptions.patient_ssn = {ssn} AND prescriptions.dosage = {dosage} AND prescriptions.medication = {medication} AND prescriptions.expiration = {exp}";
+                string query = $"DELETE FROM prescriptions WHERE prescriptions.patient_ssn = '{ssn}' AND prescriptions.dosage = '{dosage}' AND prescriptions.medication = '{medication}' AND prescriptions.expiration = '{exp}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try
                 {
@@ -383,7 +383,7 @@ namespace EMR_System
 
             if (this.OpenConnection() == true)
             {
-                string query = $"SELECT dosage, medication, expiration FROM prescriptions WHERE prescriptions.patient_ssn = {ssn}";
+                string query = $"SELECT dosage, medication, expiration FROM prescriptions WHERE prescriptions.patient_ssn = '{ssn}'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
