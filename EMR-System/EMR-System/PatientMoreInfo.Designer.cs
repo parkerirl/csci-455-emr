@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonBack = new System.Windows.Forms.Button();
             this.textSetLastName = new System.Windows.Forms.TextBox();
             this.labelLastName = new System.Windows.Forms.Label();
@@ -89,15 +89,6 @@
             this.saveAllergyBtn = new System.Windows.Forms.Button();
             this.cancelAllergy = new System.Windows.Forms.Button();
             this.patientHistory = new System.Windows.Forms.Panel();
-            this.famHist = new System.Windows.Forms.Panel();
-            this.textDisease = new System.Windows.Forms.TextBox();
-            this.textAge = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textRelaionship = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.comboSurgery = new System.Windows.Forms.ComboBox();
             this.comboHospitalized = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -108,6 +99,15 @@
             this.label15 = new System.Windows.Forms.Label();
             this.patHistSave = new System.Windows.Forms.Button();
             this.patHistCancel = new System.Windows.Forms.Button();
+            this.famHist = new System.Windows.Forms.Panel();
+            this.textDisease = new System.Windows.Forms.TextBox();
+            this.textAge = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textRelaionship = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -391,14 +391,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.f_name,
@@ -455,14 +455,14 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item,
@@ -513,14 +513,14 @@
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Relationship,
@@ -760,6 +760,121 @@
             this.patientHistory.TabIndex = 134;
             this.patientHistory.Visible = false;
             // 
+            // comboSurgery
+            // 
+            this.comboSurgery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSurgery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSurgery.FormattingEnabled = true;
+            this.comboSurgery.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboSurgery.Location = new System.Drawing.Point(308, 219);
+            this.comboSurgery.Name = "comboSurgery";
+            this.comboSurgery.Size = new System.Drawing.Size(209, 33);
+            this.comboSurgery.TabIndex = 138;
+            // 
+            // comboHospitalized
+            // 
+            this.comboHospitalized.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboHospitalized.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboHospitalized.FormattingEnabled = true;
+            this.comboHospitalized.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboHospitalized.Location = new System.Drawing.Point(308, 180);
+            this.comboHospitalized.Name = "comboHospitalized";
+            this.comboHospitalized.Size = new System.Drawing.Size(209, 33);
+            this.comboHospitalized.TabIndex = 137;
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.Control;
+            this.label17.Location = new System.Drawing.Point(99, 214);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(203, 34);
+            this.label17.TabIndex = 136;
+            this.label17.Text = "Surgery:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // injury
+            // 
+            this.injury.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.injury.Location = new System.Drawing.Point(308, 106);
+            this.injury.Name = "injury";
+            this.injury.Size = new System.Drawing.Size(209, 31);
+            this.injury.TabIndex = 135;
+            this.injury.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.Control;
+            this.label16.Location = new System.Drawing.Point(99, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(203, 34);
+            this.label16.TabIndex = 134;
+            this.label16.Text = "Injury:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // datePatHist
+            // 
+            this.datePatHist.Location = new System.Drawing.Point(308, 149);
+            this.datePatHist.Name = "datePatHist";
+            this.datePatHist.Size = new System.Drawing.Size(209, 20);
+            this.datePatHist.TabIndex = 133;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Control;
+            this.label14.Location = new System.Drawing.Point(99, 140);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(203, 34);
+            this.label14.TabIndex = 132;
+            this.label14.Text = "Date:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.Control;
+            this.label15.Location = new System.Drawing.Point(99, 177);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(203, 34);
+            this.label15.TabIndex = 130;
+            this.label15.Text = "Hospitalized:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // patHistSave
+            // 
+            this.patHistSave.BackColor = System.Drawing.Color.MidnightBlue;
+            this.patHistSave.CausesValidation = false;
+            this.patHistSave.Enabled = false;
+            this.patHistSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patHistSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.patHistSave.Location = new System.Drawing.Point(210, 356);
+            this.patHistSave.Name = "patHistSave";
+            this.patHistSave.Size = new System.Drawing.Size(176, 64);
+            this.patHistSave.TabIndex = 131;
+            this.patHistSave.Text = "Save";
+            this.patHistSave.UseVisualStyleBackColor = false;
+            this.patHistSave.Click += new System.EventHandler(this.patHistSave_Click);
+            // 
+            // patHistCancel
+            // 
+            this.patHistCancel.BackColor = System.Drawing.Color.MidnightBlue;
+            this.patHistCancel.CausesValidation = false;
+            this.patHistCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patHistCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.patHistCancel.Location = new System.Drawing.Point(392, 356);
+            this.patHistCancel.Name = "patHistCancel";
+            this.patHistCancel.Size = new System.Drawing.Size(176, 64);
+            this.patHistCancel.TabIndex = 130;
+            this.patHistCancel.Text = "Cancel";
+            this.patHistCancel.UseVisualStyleBackColor = false;
+            this.patHistCancel.Click += new System.EventHandler(this.patHistCancel_Click);
+            // 
             // famHist
             // 
             this.famHist.BackColor = System.Drawing.Color.SteelBlue;
@@ -861,121 +976,6 @@
             this.button8.Text = "Cancel";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // comboSurgery
-            // 
-            this.comboSurgery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboSurgery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSurgery.FormattingEnabled = true;
-            this.comboSurgery.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.comboSurgery.Location = new System.Drawing.Point(308, 219);
-            this.comboSurgery.Name = "comboSurgery";
-            this.comboSurgery.Size = new System.Drawing.Size(209, 33);
-            this.comboSurgery.TabIndex = 138;
-            // 
-            // comboHospitalized
-            // 
-            this.comboHospitalized.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboHospitalized.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboHospitalized.FormattingEnabled = true;
-            this.comboHospitalized.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.comboHospitalized.Location = new System.Drawing.Point(308, 180);
-            this.comboHospitalized.Name = "comboHospitalized";
-            this.comboHospitalized.Size = new System.Drawing.Size(209, 33);
-            this.comboHospitalized.TabIndex = 137;
-            // 
-            // label17
-            // 
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(99, 214);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(203, 34);
-            this.label17.TabIndex = 136;
-            this.label17.Text = "Surgery:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // injury
-            // 
-            this.injury.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.injury.Location = new System.Drawing.Point(308, 106);
-            this.injury.Name = "injury";
-            this.injury.Size = new System.Drawing.Size(209, 31);
-            this.injury.TabIndex = 135;
-            this.injury.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(99, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(203, 34);
-            this.label16.TabIndex = 134;
-            this.label16.Text = "Injury:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // datePatHist
-            // 
-            this.datePatHist.Location = new System.Drawing.Point(308, 149);
-            this.datePatHist.Name = "datePatHist";
-            this.datePatHist.Size = new System.Drawing.Size(209, 20);
-            this.datePatHist.TabIndex = 133;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(99, 140);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(203, 34);
-            this.label14.TabIndex = 132;
-            this.label14.Text = "Date:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(99, 177);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(203, 34);
-            this.label15.TabIndex = 130;
-            this.label15.Text = "Hostpitalized:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // patHistSave
-            // 
-            this.patHistSave.BackColor = System.Drawing.Color.MidnightBlue;
-            this.patHistSave.CausesValidation = false;
-            this.patHistSave.Enabled = false;
-            this.patHistSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patHistSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.patHistSave.Location = new System.Drawing.Point(210, 356);
-            this.patHistSave.Name = "patHistSave";
-            this.patHistSave.Size = new System.Drawing.Size(176, 64);
-            this.patHistSave.TabIndex = 131;
-            this.patHistSave.Text = "Save";
-            this.patHistSave.UseVisualStyleBackColor = false;
-            this.patHistSave.Click += new System.EventHandler(this.patHistSave_Click);
-            // 
-            // patHistCancel
-            // 
-            this.patHistCancel.BackColor = System.Drawing.Color.MidnightBlue;
-            this.patHistCancel.CausesValidation = false;
-            this.patHistCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patHistCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.patHistCancel.Location = new System.Drawing.Point(392, 356);
-            this.patHistCancel.Name = "patHistCancel";
-            this.patHistCancel.Size = new System.Drawing.Size(176, 64);
-            this.patHistCancel.TabIndex = 130;
-            this.patHistCancel.Text = "Cancel";
-            this.patHistCancel.UseVisualStyleBackColor = false;
-            this.patHistCancel.Click += new System.EventHandler(this.patHistCancel_Click);
             // 
             // PatientMoreInfo
             // 
