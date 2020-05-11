@@ -45,12 +45,18 @@ namespace EMR_System
                 button1.Visible = true; button1.BringToFront();
                 button2.Visible = true; button2.BringToFront();
                 button3.Visible = true; button3.BringToFront();
+                button4.Visible = true; button4.BringToFront();
+                button5.Visible = true; button5.BringToFront();
+                button6.Visible = true; button6.BringToFront();
             } 
             else
             {
                 button1.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
             }
 
             PatientInfo = Patient;

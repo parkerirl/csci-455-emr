@@ -78,7 +78,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.addFamHistBtn = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.allergy = new System.Windows.Forms.Panel();
@@ -618,19 +618,19 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // addFamHistBtn
+            // button5
             // 
-            this.addFamHistBtn.BackColor = System.Drawing.Color.MidnightBlue;
-            this.addFamHistBtn.CausesValidation = false;
-            this.addFamHistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addFamHistBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.addFamHistBtn.Location = new System.Drawing.Point(923, 11);
-            this.addFamHistBtn.Name = "addFamHistBtn";
-            this.addFamHistBtn.Size = new System.Drawing.Size(176, 64);
-            this.addFamHistBtn.TabIndex = 127;
-            this.addFamHistBtn.Text = "Add Family History";
-            this.addFamHistBtn.UseVisualStyleBackColor = false;
-            this.addFamHistBtn.Click += new System.EventHandler(this.showFamHist_Click);
+            this.button5.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button5.CausesValidation = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.Control;
+            this.button5.Location = new System.Drawing.Point(923, 11);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(176, 64);
+            this.button5.TabIndex = 127;
+            this.button5.Text = "Add Family History";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.showFamHist_Click);
             // 
             // button6
             // 
@@ -988,7 +988,7 @@
             this.Controls.Add(this.allergy);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.addFamHistBtn);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -1085,7 +1085,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dob;
         private System.Windows.Forms.DataGridViewCheckBoxColumn SelectAllergy;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button addFamHistBtn;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel allergy;
